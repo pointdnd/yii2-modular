@@ -1,0 +1,21 @@
+{
+    "name": "mii/yii2-yquery",
+    "description": "Wrhite less and do more on Yii2 we hate the namespaces :$",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gustavo Salgado",
+            "email": "gsalgadotoledo@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "mii\\yquery\\": ""
+        }
+    }
+}
