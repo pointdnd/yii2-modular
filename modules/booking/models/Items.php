@@ -1,8 +1,8 @@
 <?php
 
-namespace app\modules\booking\models;
+namespace mii\modules\booking\models;
 
-use app\modules\booking\models\base\BaseItems;
+use mii\modules\booking\models\base\BaseItems;
 use Yii;
 
 /**

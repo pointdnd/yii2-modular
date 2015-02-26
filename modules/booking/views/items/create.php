@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model app\modules\booking\models\Items */
+/* @var $model mii\modules\booking\models\Items */
 
 $this->title = $this->context->title;
 $this->params['title'] = Html::encode($this->title);

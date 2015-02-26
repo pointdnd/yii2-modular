@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\booking\commands;
+namespace mii\modules\booking\commands;
 use yii\console\Controller;
 use yii\helpers\Console;
 

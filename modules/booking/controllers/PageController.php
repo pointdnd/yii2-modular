@@ -1,10 +1,10 @@
 <?php
 
-namespace app\modules\booking\controllers;
+namespace mii\modules\booking\controllers;
 
 use Yii;
-use app\modules\booking\models\Items;
-use app\modules\booking\models\ItemsSearch;
+use mii\modules\booking\models\Items;
+use mii\modules\booking\models\ItemsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

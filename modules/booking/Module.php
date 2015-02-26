@@ -1,13 +1,13 @@
 <?php
 
-namespace app\modules\booking;
+namespace mii\modules\booking;
 use yii\base\BootstrapInterface;
 use yii\web\GroupUrlRule;
 use yii\console\Application as ConsoleApplication;
 
 class Module extends \yii\base\Module implements BootstrapInterface
 {
-    public $controllerNamespace = 'app\modules\booking\controllers';
+    public $controllerNamespace = 'mii\modules\booking\controllers';
 
     public function init()
     {
@@ -23,7 +23,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
         if ($app->hasModule('booking') && ($module = $app->getModule('booking')) instanceof Module) {
             
             if ($app instanceof ConsoleApplication) {
-                $module->controllerNamespace = 'app\modules\booking\commands';
+                $module->controllerNamespace = 'mii\modules\booking\commands';
 
             } else {
 				// config urls example
