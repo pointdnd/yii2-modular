@@ -1,10 +1,10 @@
 <?php
 
-namespace app\modules\users\controllers;
+namespace mii\modules\users\controllers;
 
 use Yii;
-use app\modules\users\models\User;
-use app\modules\users\models\UserSearch;
+use mii\modules\users\models\User;
+use mii\modules\users\models\UserSearch;
 use yii\web\NotFoundHttpException;
 use yii\web\ForbiddenHttpException;
 use yii\web\Response; 
@@ -21,9 +21,9 @@ use yii\web\ServerErrorHttpException;
 /**
  * ApiController implements the CRUD actions for User model.
  */
-class ApiController extends \app\components\rest\ActiveController
+class ApiController extends \mii\components\rest\ActiveController
 {
-    public $modelClass = 'app\modules\users\models\User';
+    public $modelClass = 'mii\modules\users\models\User';
 
     /**
      * @inheritdoc

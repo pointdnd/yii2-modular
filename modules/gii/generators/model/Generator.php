@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace app\modules\gii\generators\model;
+namespace mii\modules\gii\generators\model;
 
 use Yii;
 use yii\db\ActiveRecord;
@@ -13,8 +13,8 @@ use yii\db\Connection;
 use yii\db\Schema;
 use yii\helpers\Inflector;
 use yii\base\NotSupportedException;
-use app\modules\gii\CodeFile;
-use app\modules\gii\models\ModelGenerator;
+use mii\modules\gii\CodeFile;
+use mii\modules\gii\models\ModelGenerator;
 
 /**
  * This generator will generate one or multiple ActiveRecord classes for the specified database table.
@@ -22,10 +22,10 @@ use app\modules\gii\models\ModelGenerator;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class Generator extends \app\modules\gii\Generator
+class Generator extends \mii\modules\gii\Generator
 {
     public $db = 'db';
-    public $ns = 'app\models';
+    public $ns = 'mii\models';
     public $tableName;
     public $modelClass;
     public $baseClass = 'yii\db\ActiveRecord';
@@ -69,7 +69,7 @@ class Generator extends \app\modules\gii\Generator
     public function hasModuleSelected($moduleID)
     {
         return [
-            'ns'=>'app\modules\\'.$moduleID.'\models',
+            'ns'=>'mii\modules\\'.$moduleID.'\models',
             'modelClass'=>'MyModel',
             'tableName'=>$moduleID.'_',
         ];
@@ -162,7 +162,7 @@ class Generator extends \app\modules\gii\Generator
     public function hints()
     {
         return array_merge(parent::hints(), [
-            'ns' => 'This is the namespace of the ActiveRecord class to be generated, e.g., <code>app\models</code>',
+            'ns' => 'This is the namespace of the ActiveRecord class to be generated, e.g., <code>mii\models</code>',
             'db' => 'This is the ID of the DB application component.',
             'tableName' => 'This is the name of the DB table that the new ActiveRecord class is associated with, e.g. <code>post</code>.
                 The table name may consist of the DB schema part if needed, e.g. <code>public.post</code>.

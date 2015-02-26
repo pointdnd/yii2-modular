@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace app\modules\gii\generators\crud;
+namespace mii\modules\gii\generators\crud;
 
 use Yii;
 use yii\db\ActiveRecord;
@@ -14,8 +14,8 @@ use yii\db\Schema;
 use yii\helpers\Inflector;
 use yii\helpers\VarDumper;
 use yii\web\Controller;
-use app\modules\gii\CodeFile;
-use app\modules\gii\models\CrudGenerator;
+use mii\modules\gii\CodeFile;
+use mii\modules\gii\models\CrudGenerator;
 
 /**
  * Generates CRUD
@@ -30,7 +30,7 @@ use app\modules\gii\models\CrudGenerator;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class Generator extends \app\modules\gii\Generator
+class Generator extends \mii\modules\gii\Generator
 {
     public $templates = [
         'default' => '@app/modules/gii/generators/crud/yii2modular-default',
@@ -42,7 +42,7 @@ class Generator extends \app\modules\gii\Generator
     public $modelClass;
     public $controllerClass;
     public $viewPath;
-    public $baseControllerClass = 'app\components\web\Controller';
+    public $baseControllerClass = 'mii\components\web\Controller';
     // public $baseControllerClass = 'yii\web\Controller';
     public $indexWidgetType = 'grid';
     public $searchModelClass = '';
@@ -176,9 +176,9 @@ class Generator extends \app\modules\gii\Generator
     {
         return array_merge(parent::hints(), [
             'modelClass' => 'This is the ActiveRecord class associated with the table that CRUD will be built upon.
-                You should provide a fully qualified class name, e.g., <code>app\models\Post</code>.',
+                You should provide a fully qualified class name, e.g., <code>mii\models\Post</code>.',
             'controllerClass' => 'This is the name of the controller class to be generated. You should
-                provide a fully qualified namespaced class (e.g. <code>app\controllers\PostController</code>),
+                provide a fully qualified namespaced class (e.g. <code>mii\controllers\PostController</code>),
                 and class name should be in CamelCase with an uppercase first letter. Make sure the class
                 is using the same namespace as specified by your application\'s controllerNamespace property.',
             'viewPath' => 'Specify the directory for storing the view scripts for the controller. You may use path alias here, e.g.,
@@ -189,7 +189,7 @@ class Generator extends \app\modules\gii\Generator
             'indexWidgetType' => 'This is the widget type to be used in the index page to display list of the models.
                 You may choose either <code>GridView</code> or <code>ListView</code>',
             'searchModelClass' => 'This is the name of the search model class to be generated. You should provide a fully
-                qualified namespaced class name, e.g., <code>app\models\PostSearch</code>.',
+                qualified namespaced class name, e.g., <code>mii\models\PostSearch</code>.',
         ]);
     }
 
@@ -392,7 +392,7 @@ EOD;
             }
         }
         if($inputField=='users')
-            return "\$form->field(\$model, '$attribute')->dropDownList(\app\modules\users\models\User::listData(), ['prompt' => '','class'=>'form-control'])";
+            return "\$form->field(\$model, '$attribute')->dropDownList(y('User')->listData(), ['prompt' => '','class'=>'form-control'])";
         if($inputField=='field' or $inputField=='link' or $inputField=='integer'or $inputField=='email')
         {
             if(($size=$commentType['size'])!==null)

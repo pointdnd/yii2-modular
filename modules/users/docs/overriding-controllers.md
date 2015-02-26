@@ -7,16 +7,16 @@ you may need to extend that functionality and add some logic that suits your nee
 Step 1: Create new controller
 -----------------------------
 
-First of all you should create new controller under your own namespace (it is recommended to use `app\controllers\user`)
+First of all you should create new controller under your own namespace (it is recommended to use `mii\controllers\user`)
 and extend it from the controller you want to override.
 
-For example, if you want to override AdminController you should create `app\controllers\user\AdminController` and extend
-it from `app\modules\users\controllers\AdminController`:
+For example, if you want to override AdminController you should create `mii\controllers\user\AdminController` and extend
+it from `mii\modules\users\controllers\AdminController`:
 
 ```php
-namespace app\controllers\user;
+namespace mii\controllers\user;
 
-use app\modules\users\controllers\AdminController as BaseAdminController;
+use mii\modules\users\controllers\AdminController as BaseAdminController;
 
 class AdminController extends BaseAdminController
 {
@@ -37,9 +37,9 @@ To let Yii2-user know about your controller, you should add it to the module's c
 'modules' => [
     ...
     'user' => [
-        'class' => 'app\modules\users\Module',
+        'class' => 'mii\modules\users\Module',
         'controllerMap' => [
-            'admin' => 'app\controllers\user\AdminController'
+            'admin' => 'mii\controllers\user\AdminController'
         ],
         ...
     ],

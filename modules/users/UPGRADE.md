@@ -26,7 +26,7 @@ property:
 ```php
 'modules' => [
     'user' => [
-        'class' => 'app\modules\users\Module',
+        'class' => 'mii\modules\users\Module',
         'modelMap' => [
             'User' => 'your\model\User',
             'Profile' => 'your\model\Profile',
@@ -42,7 +42,7 @@ via `mailer` module's property:
 ```php
 'modules' => [
     'user' => [
-        'class' => 'app\modules\users\Module',
+        'class' => 'mii\modules\users\Module',
         'mailer' => [
             'sender' => 'noreply@myhost.com',
         ],

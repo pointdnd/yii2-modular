@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\users\controllers;
+namespace mii\modules\users\controllers;
 
-use app\modules\users\Finder;
-use app\modules\users\models\RegistrationForm;
-use app\modules\users\models\ResendForm;
-use app\modules\users\models\User;
+use mii\modules\users\Finder;
+use mii\modules\users\models\RegistrationForm;
+use mii\modules\users\models\ResendForm;
+use mii\modules\users\models\User;
 use yii\base\Model;
 use yii\web\Controller;
 use yii\filters\AccessControl;
@@ -26,7 +26,7 @@ use yii\widgets\ActiveForm;
  * RegistrationController is responsible for all registration process, which includes registration of a new account,
  * resending confirmation tokens, email confirmation and registration via social networks.
  *
- * @property \app\modules\users\Module $module
+ * @property \mii\modules\users\Module $module
  *
  * @author Dmitry Erofeev <dmeroff@gmail.com>
  */

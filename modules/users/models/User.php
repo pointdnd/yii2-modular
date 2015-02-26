@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\users\models;
+namespace mii\modules\users\models;
 
-use app\modules\users\Finder;
-use app\modules\users\helpers\Password;
-use app\modules\users\Mailer;
-use app\modules\users\Module;
+use mii\modules\users\Finder;
+use mii\modules\users\helpers\Password;
+use mii\modules\users\Mailer;
+use mii\modules\users\Module;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
@@ -58,13 +58,13 @@ class User extends ActiveRecord implements IdentityInterface
     /** @var string Plain password. Used for model validation. */
     public $password;
 
-    /** @var \app\modules\users\Module */
+    /** @var \mii\modules\users\Module */
     protected $module;
 
-    /** @var \app\modules\users\Mailer */
+    /** @var \mii\modules\users\Mailer */
     protected $mailer;
 
-    /** @var \app\modules\users\Finder */
+    /** @var \mii\modules\users\Finder */
     protected $finder;
 
     /** @inheritdoc */

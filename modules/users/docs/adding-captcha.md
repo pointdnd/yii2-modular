@@ -22,9 +22,9 @@ public property named **captcha** and validation rules.
 
     <?php
 
-    namespace app\models;
+    namespace mii\models;
 
-    class RegistrationForm extends \app\modules\users\models\RegistrationForm
+    class RegistrationForm extends \mii\modules\users\models\RegistrationForm
     {
         /**
          * @var string
@@ -62,7 +62,7 @@ form, just copy and paste following code into newly created view file.
     /**
      * @var yii\web\View $this
      * @var yii\widgets\ActiveForm $form
-     * @var app\models\RegistrationForm $model
+     * @var mii\models\RegistrationForm $model
      */
     $this->title = Yii::t('user', 'Sign up');
     $this->params['breadcrumbs'][] = $this->title;
@@ -105,14 +105,14 @@ form, just copy and paste following code into newly created view file.
 3. Adding action to the controller
 ----------------------------------
 
-In order to make captcha work you have to add captcha action to `app\controllers\SiteController` Maybe it is already
+In order to make captcha work you have to add captcha action to `mii\controllers\SiteController` Maybe it is already
 added because standard Yii2 application template adds it automatically.
 
 ```php
 
     <?php
     
-    namespace app\controllers;
+    namespace mii\controllers;
 
     class SiteController extends \yii\web\Controller
     {

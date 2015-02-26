@@ -1,9 +1,9 @@
 <?php
 
-namespace app\modules\users\tests;
+namespace mii\modules\users\tests;
 
 use Codeception\Specify;
-use app\modules\users\models\User;
+use mii\modules\users\models\User;
 use tests\codeception\fixtures\UserFixture;
 use yii\codeception\TestCase;
 use Yii;

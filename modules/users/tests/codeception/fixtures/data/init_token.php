@@ -1,6 +1,6 @@
 <?php
 
-use \app\modules\users\models\Token;
+use \mii\modules\users\models\Token;
 
 $time = time();
 

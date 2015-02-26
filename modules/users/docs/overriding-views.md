@@ -39,7 +39,7 @@ use yii\widgets\ActiveForm;
 /**
  * @var yii\web\View              $this
  * @var yii\widgets\ActiveForm    $form
- * @var app\modules\user\models\User $user
+ * @var mii\modules\user\models\User $user
  */
 
 $this->title = Yii::t('user', 'Sign up');

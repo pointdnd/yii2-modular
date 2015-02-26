@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\users\migrations;
+namespace mii\modules\users\migrations;
 
 /**
  * @author Dmitry Erofeev <dmeroff@gmail.com>

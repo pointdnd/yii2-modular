@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\users\models;
+namespace mii\modules\users\models;
 
-use app\modules\users\Finder;
-use app\modules\users\Mailer;
+use mii\modules\users\Finder;
+use mii\modules\users\Mailer;
 use yii\base\Model;
 
 /**
  * Model for collecting data on password recovery.
  *
- * @property \app\modules\users\Module $module
+ * @property \mii\modules\users\Module $module
  *
  * @author Dmitry Erofeev <dmeroff@gmail.com>
  */
@@ -33,7 +33,7 @@ class RecoveryForm extends Model
     /** @var User */
     protected $user;
 
-    /** @var \app\modules\users\Module */
+    /** @var \mii\modules\users\Module */
     protected $module;
 
     /** @var Mailer */

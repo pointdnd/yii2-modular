@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace app\modules\gii;
+namespace mii\modules\gii;
 
 use Yii;
 use yii\base\BootstrapInterface;
@@ -20,7 +20,7 @@ use yii\web\ForbiddenHttpException;
  * return [
  *     'bootstrap' => ['gii'],
  *     'modules' => [
- *         'gii' => ['class' => 'app\modules\gii\Module'],
+ *         'gii' => ['class' => 'mii\modules\gii\Module'],
  *     ],
  * ]
  * ~~~
@@ -44,7 +44,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
     /**
      * @inheritdoc
      */
-    public $controllerNamespace = 'app\modules\gii\controllers';
+    public $controllerNamespace = 'mii\modules\gii\controllers';
     /**
      * @var array the list of IPs that are allowed to access this module.
      * Each array element represents a single IP filter which can be either an IP address
@@ -125,7 +125,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
             ], false);
         } elseif ($app instanceof \yii\console\Application) {
             $app->controllerMap[$this->id] = [
-                'class' => 'app\modules\gii\console\GenerateController',
+                'class' => 'mii\modules\gii\console\GenerateController',
                 'generators' => array_merge($this->coreGenerators(), $this->generators),
                 'module' => $this,
             ];
@@ -187,12 +187,12 @@ class Module extends \yii\base\Module implements BootstrapInterface
     protected function coreGenerators()
     {
         return [
-            'model' => ['class' => 'app\modules\gii\generators\model\Generator'],
-            'crud' => ['class' => 'app\modules\gii\generators\crud\Generator'],
-            'controller' => ['class' => 'app\modules\gii\generators\controller\Generator'],
-            'form' => ['class' => 'app\modules\gii\generators\form\Generator'],
-            'module' => ['class' => 'app\modules\gii\generators\module\Generator'],
-            'extension' => ['class' => 'app\modules\gii\generators\extension\Generator'],
+            'model' => ['class' => 'mii\modules\gii\generators\model\Generator'],
+            'crud' => ['class' => 'mii\modules\gii\generators\crud\Generator'],
+            'controller' => ['class' => 'mii\modules\gii\generators\controller\Generator'],
+            'form' => ['class' => 'mii\modules\gii\generators\form\Generator'],
+            'module' => ['class' => 'mii\modules\gii\generators\module\Generator'],
+            'extension' => ['class' => 'mii\modules\gii\generators\extension\Generator'],
         ];
     }
 

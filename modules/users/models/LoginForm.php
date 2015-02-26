@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\users\models;
+namespace mii\modules\users\models;
 
-use app\modules\users\Finder;
+use mii\modules\users\Finder;
 use yii\base\Model;
-use app\modules\users\helpers\Password;
+use mii\modules\users\helpers\Password;
 
 /**
  * LoginForm get user's login and password, validates them and logs the user in. If user has been blocked, it adds
@@ -32,10 +32,10 @@ class LoginForm extends Model
     /** @var string Whether to remember the user */
     public $rememberMe = false;
 
-    /** @var \app\modules\users\models\User */
+    /** @var \mii\modules\users\models\User */
     protected $user;
 
-    /** @var \app\modules\users\Module */
+    /** @var \mii\modules\users\Module */
     protected $module;
 
     /** @var Finder */

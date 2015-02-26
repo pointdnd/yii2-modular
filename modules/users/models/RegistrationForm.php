@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\users\models;
+namespace mii\modules\users\models;
 
-use app\modules\users\Module;
+use mii\modules\users\Module;
 use yii\base\Model;
 
 /**

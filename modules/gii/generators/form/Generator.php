@@ -5,11 +5,11 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace app\modules\gii\generators\form;
+namespace mii\modules\gii\generators\form;
 
 use Yii;
 use yii\base\Model;
-use app\modules\gii\CodeFile;
+use mii\modules\gii\CodeFile;
 
 /**
  * This generator will generate an action view file based on the specified model class.
@@ -19,7 +19,7 @@ use app\modules\gii\CodeFile;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class Generator extends \app\modules\gii\Generator
+class Generator extends \mii\modules\gii\Generator
 {
     public $modelClass;
     public $viewPath = '@app/views';
@@ -111,7 +111,7 @@ class Generator extends \app\modules\gii\Generator
     public function hints()
     {
         return array_merge(parent::hints(), [
-            'modelClass' => 'This is the model class for collecting the form input. You should provide a fully qualified class name, e.g., <code>app\models\Post</code>.',
+            'modelClass' => 'This is the model class for collecting the form input. You should provide a fully qualified class name, e.g., <code>mii\models\Post</code>.',
             'viewName' => 'This is the view name with respect to the view path. For example, <code>site/index</code> would generate a <code>site/index.php</code> view file under the view path.',
             'viewPath' => 'This is the root view path to keep the generated view files. You may provide either a directory or a path alias, e.g., <code>@app/views</code>.',
             'scenarioName' => 'This is the scenario to be used by the model when collecting the form input. If empty, the default scenario will be used.',

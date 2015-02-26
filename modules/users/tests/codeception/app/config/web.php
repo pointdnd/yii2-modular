@@ -4,7 +4,7 @@ return [
     'id'        => 'yii2-user-test',
     'basePath'  => dirname(__DIR__),
     'bootstrap' => [
-        'app\modules\users\Bootstrap'
+        'mii\modules\users\Bootstrap'
     ],
     'extensions' => require(VENDOR_DIR . '/yiisoft/extensions.php'),
     'aliases' => [
@@ -14,10 +14,10 @@ return [
     ],
     'modules' => [
         'users' => [
-            'class' => 'app\modules\users\Module',
+            'class' => 'mii\modules\users\Module',
             'admins' => ['user'],
             'mailer' => [
-                'class' => 'app\components\MailerMock',
+                'class' => 'mii\components\MailerMock',
             ],
         ]
     ],

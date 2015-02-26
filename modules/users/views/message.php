@@ -12,7 +12,7 @@
 /**
  * @var $this   yii\web\View
  * @var $title  string
- * @var $module app\modules\users\Module
+ * @var $module mii\modules\users\Module
  */
 
 $this->title = $title;

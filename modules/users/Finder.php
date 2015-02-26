@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\users;
+namespace mii\modules\users;
 
 use yii\base\Object;
 use yii\db\ActiveQuery;

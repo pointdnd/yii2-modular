@@ -12,7 +12,7 @@ To start using user management interface you have to add your username to admini
 'modules' => [
     ...
     'user' => [
-        'class'  => 'app\modules\users\Module',
+        'class'  => 'mii\modules\users\Module',
         'admins' => ['your-username-goes-here']
     ],
     ...
@@ -56,10 +56,10 @@ Sometimes you will need to have different layouts for frontend and backend pages
 'modules' => [
     ...
     'user' => [
-        'class' => 'app\modules\users\Module',
+        'class' => 'mii\modules\users\Module',
         'controllerMap' => [
             'admin' => [
-                'class'  => 'app\controllers\user\AdminController',
+                'class'  => 'mii\controllers\user\AdminController',
                 'layout' => 'path-to-your-admin-layout',
             ],
         ],

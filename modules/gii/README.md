@@ -34,7 +34,7 @@ Once the extension is installed, simply modify your application configuration as
 return [
     'bootstrap' => ['gii'],
     'modules' => [
-        'gii' => 'app\modules\gii\Module',
+        'gii' => 'mii\modules\gii\Module',
         // ...
     ],
     // ...

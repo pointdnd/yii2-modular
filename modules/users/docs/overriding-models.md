@@ -8,9 +8,9 @@ model. This is possible because Yii2-user uses [Dependency Injection container](
 Assume you decided to override user class and change registration process. Let’s create new user class under `@app/models`.
 
 ```php
-namespace app\models;
+namespace mii\models;
 
-use app\modules\users\models\User as BaseUser;
+use mii\modules\users\models\User as BaseUser;
 
 class User extends BaseUser
 {
@@ -26,9 +26,9 @@ In order to make Yii2-user use your class you need to configure module as follow
 ```php
 ...
 'user' => [
-    'class' => 'app\modules\users\Module',
+    'class' => 'mii\modules\users\Module',
     'modelMap' => [
-        'User' => 'app\models\User',
+        'User' => 'mii\models\User',
     ],
 ],
 ...
@@ -43,10 +43,10 @@ Yii2-user allows you to attach behavior or event handler to any model. To do thi
 [
     ...
     'user' => [
-        'class' => 'app\modules\users\Module',
+        'class' => 'mii\modules\users\Module',
         'modelMap' => [
             'User' => [
-                'class' => 'app\models\User',
+                'class' => 'mii\models\User',
                 'on user_create_init' => function () {
                     // do you magic
                 },

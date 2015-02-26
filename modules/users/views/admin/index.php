@@ -16,7 +16,7 @@ use yii\widgets\Pjax;
 /**
  * @var yii\web\View $this
  * @var yii\data\ActiveDataProvider $dataProvider
- * @var app\modules\users\models\UserSearch $searchModel
+ * @var mii\modules\users\models\UserSearch $searchModel
  */
 
 $this->title = Yii::t('users', 'Manage users');

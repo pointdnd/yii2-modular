@@ -4,8 +4,8 @@ use tests\codeception\_pages\RecoveryPage;
 use tests\codeception\_pages\LoginPage;
 use yii\helpers\Html;
 use yii\helpers\Url;
-use app\modules\users\models\User;
-use app\modules\users\models\Token;
+use mii\modules\users\models\User;
+use mii\modules\users\models\Token;
 
 $I = new FunctionalTester($scenario);
 $I->wantTo('ensure that password recovery works');

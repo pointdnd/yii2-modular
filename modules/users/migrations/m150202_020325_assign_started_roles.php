@@ -2,7 +2,7 @@
 
 use yii\db\Schema;
 use yii\db\Migration;
-use app\modules\users\models\User;
+use mii\modules\users\models\User;
 
 class m150202_020325_assign_started_roles extends Migration
 {

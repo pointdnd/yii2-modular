@@ -10,7 +10,7 @@
  */
 
 /**
- * @var app\modules\users\models\User $user
+ * @var mii\modules\users\models\User $user
  */
 ?>
 <?= Yii::t('users', 'Hello') ?>,

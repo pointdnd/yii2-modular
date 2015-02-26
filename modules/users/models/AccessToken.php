@@ -1,8 +1,8 @@
 <?php
 
-namespace app\modules\users\models;
+namespace mii\modules\users\models;
 
-use app\modules\users\models\base\BaseAccessToken;
+use mii\modules\users\models\base\BaseAccessToken;
 use Yii;
 
 /**

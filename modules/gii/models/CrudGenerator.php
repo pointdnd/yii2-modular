@@ -1,8 +1,8 @@
 <?php
 
-namespace app\modules\gii\models;
+namespace mii\modules\gii\models;
 
-use app\modules\gii\models\base\BaseCrudGenerator;
+use mii\modules\gii\models\base\BaseCrudGenerator;
 use Yii;
 
 /**

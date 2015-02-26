@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\users\controllers;
+namespace mii\modules\users\controllers;
 
-use app\modules\users\Finder;
-use app\modules\users\models\Account;
-use app\modules\users\models\LoginForm;
+use mii\modules\users\Finder;
+use mii\modules\users\models\Account;
+use mii\modules\users\models\LoginForm;
 use yii\base\Model;
 use yii\helpers\Url;
 use yii\web\Controller;
@@ -26,7 +26,7 @@ use yii\widgets\ActiveForm;
 /**
  * Controller that manages user authentication process.
  *
- * @property \app\modules\users\Module $module
+ * @property \mii\modules\users\Module $module
  *
  * @author Dmitry Erofeev <dmeroff@gmail.com>
  */

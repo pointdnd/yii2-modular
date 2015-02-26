@@ -1,8 +1,8 @@
 <?php
 
-namespace app\components;
+namespace mii\components;
 
-use app\modules\users\Mailer;
+use mii\modules\users\Mailer;
 use tests\codeception\_support\MailHelper;
 
 class MailerMock extends Mailer

@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\users\controllers;
+namespace mii\modules\users\controllers;
 
-use app\modules\users\Finder;
-use app\modules\users\models\Account;
-use app\modules\users\models\SettingsForm;
-use app\modules\users\Module;
+use mii\modules\users\Finder;
+use mii\modules\users\models\Account;
+use mii\modules\users\models\SettingsForm;
+use mii\modules\users\Module;
 use yii\authclient\ClientInterface;
 use yii\base\Model;
 use yii\helpers\Url;
@@ -29,7 +29,7 @@ use yii\widgets\ActiveForm;
 /**
  * SettingsController manages updating user settings (e.g. profile, email and password).
  *
- * @property \app\modules\users\Module $module
+ * @property \mii\modules\users\Module $module
  *
  * @author Dmitry Erofeev <dmeroff@gmail.com>
  */

@@ -2,8 +2,8 @@
 
 use yii\db\Schema;
 use yii\db\Migration;
-use app\modules\users\models\User;
-use app\modules\users\helpers\Password;
+use mii\modules\users\models\User;
+use mii\modules\users\helpers\Password;
 
 class m150201_234422_new_user_root extends Migration
 {

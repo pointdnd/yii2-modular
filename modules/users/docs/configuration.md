@@ -52,7 +52,7 @@ The configuration should be applied in your main configuration file:
 'modules' => [
     ...
     'user' => [
-        'class' => 'app\modules\users\Module',
+        'class' => 'mii\modules\users\Module',
         'enableUnconfirmedLogin' => true,
         'confirmWithin' => 21600,
         'cost' => 12,

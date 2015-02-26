@@ -8,7 +8,7 @@ use yii\helpers\StringHelper;
 use yii\helpers\Inflector;
 
 /* @var $this yii\web\View */
-/* @var $generator app\modules\gii\generators\crud\Generator */
+/* @var $generator mii\modules\gii\generators\crud\Generator */
 
 $controllerClass = StringHelper::basename($generator->controllerClass);
 $modelClass = StringHelper::basename($generator->modelClass);
@@ -52,7 +52,7 @@ use yii\web\ServerErrorHttpException;
 /**
  * <?= $controllerClass ?> implements the CRUD actions for <?= $modelClass ?> model.
  */
-class <?= $controllerClass ?> extends <?= '\app\components\rest\ActiveController' . "\n" ?>
+class <?= $controllerClass ?> extends <?= '\mii\components\rest\ActiveController' . "\n" ?>
 {
     public $modelClass = '<?= ltrim($generator->modelClass, '\\') ?>';
     

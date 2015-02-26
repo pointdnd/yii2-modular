@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\users\widgets;
+namespace mii\modules\users\widgets;
 
-use app\modules\users\models\LoginForm;
+use mii\modules\users\models\LoginForm;
 use yii\base\Widget;
 
 /**

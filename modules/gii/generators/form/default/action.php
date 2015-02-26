@@ -6,7 +6,7 @@
 use yii\helpers\Inflector;
 
 /* @var $this yii\web\View */
-/* @var $generator app\modules\gii\generators\form\Generator */
+/* @var $generator mii\modules\gii\generators\form\Generator */
 
 echo "<?php\n";
 ?>

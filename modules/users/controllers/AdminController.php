@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\users\controllers;
+namespace mii\modules\users\controllers;
 
-use app\modules\users\Finder;
-use app\modules\users\models\User;
-use app\modules\users\models\UserSearch;
+use mii\modules\users\Finder;
+use mii\modules\users\models\User;
+use mii\modules\users\models\UserSearch;
 use yii\base\Model;
 use yii\web\Controller;
 use yii\filters\AccessControl;
@@ -25,7 +25,7 @@ use yii\widgets\ActiveForm;
 /**
  * AdminController allows you to administrate users.
  *
- * @property \app\modules\users\Module $module
+ * @property \mii\modules\users\Module $module
  * @author Dmitry Erofeev <dmeroff@gmail.com
  */
 class AdminController extends Controller

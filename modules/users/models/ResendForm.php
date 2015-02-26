@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\users\models;
+namespace mii\modules\users\models;
 
-use app\modules\users\Finder;
-use app\modules\users\Mailer;
+use mii\modules\users\Finder;
+use mii\modules\users\Mailer;
 use yii\base\Model;
 
 /**
@@ -31,7 +31,7 @@ class ResendForm extends Model
     /** @var User */
     private $_user;
 
-    /** @var \app\modules\users\Module */
+    /** @var \mii\modules\users\Module */
     protected $module;
 
     /** @var Mailer */

@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\users\models;
+namespace mii\modules\users\models;
 
-use app\modules\users\Finder;
+use mii\modules\users\Finder;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 

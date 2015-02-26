@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace app\modules\gii;
+namespace mii\modules\gii;
 
 use yii\web\AssetBundle;
 
@@ -28,6 +28,6 @@ class GiiAsset extends AssetBundle
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
         'yii\bootstrap\BootstrapPluginAsset',
-        'app\modules\gii\TypeAheadAsset',
+        'mii\modules\gii\TypeAheadAsset',
     ];
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace app\modules\users\tests;
+namespace mii\modules\users\tests;
 
-use app\modules\users\models\ResendForm;
+use mii\modules\users\models\ResendForm;
 use tests\codeception\fixtures\UserFixture;
 use yii\codeception\TestCase;
 

@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\users\controllers;
+namespace mii\modules\users\controllers;
 
-use app\modules\users\Finder;
+use mii\modules\users\Finder;
 use yii\web\Controller;
 use yii\filters\AccessControl;
 use yii\web\NotFoundHttpException;
@@ -19,7 +19,7 @@ use yii\web\NotFoundHttpException;
 /**
  * ProfileController shows users profiles.
  *
- * @property \app\modules\users\Module $module
+ * @property \mii\modules\users\Module $module
  *
  * @author Dmitry Erofeev <dmeroff@gmail.com>
  */

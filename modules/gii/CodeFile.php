@@ -5,11 +5,11 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace app\modules\gii;
+namespace mii\modules\gii;
 
 use Yii;
 use yii\base\Object;
-use app\modules\gii\components\DiffRendererHtmlInline;
+use mii\modules\gii\components\DiffRendererHtmlInline;
 use yii\helpers\Html;
 
 /**

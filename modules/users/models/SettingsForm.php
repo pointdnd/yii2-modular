@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\users\models;
+namespace mii\modules\users\models;
 
-use app\modules\users\helpers\Password;
-use app\modules\users\Mailer;
-use app\modules\users\Module;
+use mii\modules\users\helpers\Password;
+use mii\modules\users\Mailer;
+use mii\modules\users\Module;
 use yii\base\Model;
 use yii\base\NotSupportedException;
 

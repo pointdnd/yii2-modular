@@ -1,9 +1,9 @@
 <?php
 
-namespace app\modules\users\tests;
+namespace mii\modules\users\tests;
 
 use Codeception\Specify;
-use app\modules\users\models\RecoveryForm;
+use mii\modules\users\models\RecoveryForm;
 use tests\codeception\fixtures\UserFixture;
 use tests\codeception\fixtures\TokenFixture;
 use yii\codeception\TestCase;

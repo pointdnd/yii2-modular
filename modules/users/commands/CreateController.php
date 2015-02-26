@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\users\commands;
+namespace mii\modules\users\commands;
 
-use app\modules\users\models\User;
+use mii\modules\users\models\User;
 use yii\console\Controller;
 use yii\helpers\Console;
 
 /**
  * Creates new user account.
  *
- * @property \app\modules\users\Module $module
+ * @property \mii\modules\users\Module $module
  *
  * @author Dmitry Erofeev <dmeroff@gmail.com>
  */

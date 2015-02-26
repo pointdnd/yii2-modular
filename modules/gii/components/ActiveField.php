@@ -5,9 +5,9 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace app\modules\gii\components;
+namespace mii\modules\gii\components;
 
-use app\modules\gii\Generator;
+use mii\modules\gii\Generator;
 use yii\helpers\Json;
 
 /**

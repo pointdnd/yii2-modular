@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\users;
+namespace mii\modules\users;
 
-use app\modules\users\models\Token;
-use app\modules\users\models\User;
+use mii\modules\users\models\Token;
+use mii\modules\users\models\User;
 use yii\base\Component;
 
 /**

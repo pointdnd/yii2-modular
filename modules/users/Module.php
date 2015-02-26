@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\users;
+namespace mii\modules\users;
 
 use yii\authclient\Collection;
 use yii\base\BootstrapInterface;
@@ -31,7 +31,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
      /**
      * @inheritdoc
      */
-    public $controllerNamespace = 'app\modules\users\controllers';
+    public $controllerNamespace = 'mii\modules\users\controllers';
    
     const VERSION = '0.9.2';
 
@@ -111,16 +111,16 @@ class Module extends \yii\base\Module implements BootstrapInterface
 
     /** @var array Model's map */
     private $_modelMap = [
-        'User'             => 'app\modules\users\models\User',
-        'Account'          => 'app\modules\users\models\Account',
-        'Profile'          => 'app\modules\users\models\Profile',
-        'Token'            => 'app\modules\users\models\Token',
-        'RegistrationForm' => 'app\modules\users\models\RegistrationForm',
-        'ResendForm'       => 'app\modules\users\models\ResendForm',
-        'LoginForm'        => 'app\modules\users\models\LoginForm',
-        'SettingsForm'     => 'app\modules\users\models\SettingsForm',
-        'RecoveryForm'     => 'app\modules\users\models\RecoveryForm',
-        'UserSearch'       => 'app\modules\users\models\UserSearch',
+        'User'             => 'mii\modules\users\models\User',
+        'Account'          => 'mii\modules\users\models\Account',
+        'Profile'          => 'mii\modules\users\models\Profile',
+        'Token'            => 'mii\modules\users\models\Token',
+        'RegistrationForm' => 'mii\modules\users\models\RegistrationForm',
+        'ResendForm'       => 'mii\modules\users\models\ResendForm',
+        'LoginForm'        => 'mii\modules\users\models\LoginForm',
+        'SettingsForm'     => 'mii\modules\users\models\SettingsForm',
+        'RecoveryForm'     => 'mii\modules\users\models\RecoveryForm',
+        'UserSearch'       => 'mii\modules\users\models\UserSearch',
     ];
 
     /** @inheritdoc */
@@ -130,7 +130,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
         if ($app->hasModule('users') && ($module = $app->getModule('users')) instanceof Module) {
             $this->_modelMap = array_merge($this->_modelMap, $module->modelMap);
             foreach ($this->_modelMap as $name => $definition) {
-                $class = "app\\modules\\users\\models\\" . $name;
+                $class = "mii\\modules\\users\\models\\" . $name;
                 \Yii::$container->set($class, $definition);
                 $modelName = is_array($definition) ? $definition['class'] : $definition;
                 $module->modelMap[$name] = $modelName;
@@ -148,7 +148,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
             ]);
 
             if ($app instanceof ConsoleApplication) {
-                $module->controllerNamespace = 'app\modules\users\commands';
+                $module->controllerNamespace = 'mii\modules\users\commands';
 
                 $app->get('i18n')->translations['users*'] = [
                     'class'    => PhpMessageSource::className(),
@@ -210,7 +210,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
                 'recoverySubject'       => \Yii::t('users', 'Complete password reset on {0}', \Yii::$app->name)
             ];
 
-            \Yii::$container->set('app\modules\users\Mailer', array_merge($defaults, $module->mailer));
+            \Yii::$container->set('mii\modules\users\Mailer', array_merge($defaults, $module->mailer));
         }
         
     }

@@ -11,7 +11,7 @@
 
 /**
  * @var yii\widgets\ActiveForm       $form
- * @var app\modules\users\models\Profile $profile
+ * @var mii\modules\users\models\Profile $profile
  */
 
 ?>

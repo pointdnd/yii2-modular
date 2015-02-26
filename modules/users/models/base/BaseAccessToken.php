@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\users\models\base;
+namespace mii\modules\users\models\base;
 
 use Yii;
 

@@ -4,7 +4,7 @@
  */
 
 /* @var $this yii\web\View */
-/* @var $generator app\modules\gii\generators\controller\Generator */
+/* @var $generator mii\modules\gii\generators\controller\Generator */
 /* @var $action string the action ID */
 
 echo "<?php\n";

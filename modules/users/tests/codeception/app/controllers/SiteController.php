@@ -1,6 +1,6 @@
 <?php
 
-namespace app\controllers;
+namespace mii\controllers;
 
 use yii\web\Controller;
 

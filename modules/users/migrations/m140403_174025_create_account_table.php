@@ -10,7 +10,7 @@
  */
 
 use yii\db\Schema;
-use app\modules\users\migrations\Migration;
+use mii\modules\users\migrations\Migration;
 
 /**
  * @author Dmitry Erofeev <dmeroff@gmail.com

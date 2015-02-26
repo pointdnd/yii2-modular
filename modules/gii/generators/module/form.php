@@ -1,7 +1,7 @@
 <?php
 /* @var $this yii\web\View */
 /* @var $form yii\widgets\ActiveForm */
-/* @var $generator app\modules\gii\generators\module\Generator */
+/* @var $generator mii\modules\gii\generators\module\Generator */
 
 ?>
 <div class="module-form">

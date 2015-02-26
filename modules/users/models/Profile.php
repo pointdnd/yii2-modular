@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\users\models;
+namespace mii\modules\users\models;
 
 use yii\db\ActiveRecord;
 
@@ -29,7 +29,7 @@ use yii\db\ActiveRecord;
  */
 class Profile extends ActiveRecord
 {
-    /** @var \app\modules\users\Module */
+    /** @var \mii\modules\users\Module */
     protected $module;
 
     /** @inheritdoc */

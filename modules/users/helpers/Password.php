@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\users\helpers;
+namespace mii\modules\users\helpers;
 
 /**
  * Password helper.

@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace app\modules\gii\components;
+namespace mii\modules\gii\components;
 
 /**
  * Renders diff to HTML. Output adjusted to be copy-paste friendly.

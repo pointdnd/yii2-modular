@@ -1,7 +1,7 @@
 <?php
 
-use app\modules\users\models\Token;
-use app\modules\users\models\User;
+use mii\modules\users\models\Token;
+use mii\modules\users\models\User;
 use tests\codeception\_pages\RegistrationPage;
 use yii\helpers\Html;
 

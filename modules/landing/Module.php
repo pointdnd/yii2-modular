@@ -1,10 +1,10 @@
 <?php
 
-namespace app\modules\landing;
+namespace mii\modules\landing;
 
 class Module extends \yii\base\Module
 {
-    public $controllerNamespace = 'app\modules\landing\controllers';
+    public $controllerNamespace = 'mii\modules\landing\controllers';
 
     public function init()
     {

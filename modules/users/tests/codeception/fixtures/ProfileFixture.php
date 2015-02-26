@@ -6,5 +6,5 @@ use yii\test\ActiveFixture;
 
 class ProfileFixture extends ActiveFixture
 {
-    public $modelClass = 'app\modules\users\models\Profile';
+    public $modelClass = 'mii\modules\users\models\Profile';
 }

@@ -1,6 +1,6 @@
 <?php
 /* @var $this yii\web\View */
-/* @var $generator app\modules\gii\Generator */
+/* @var $generator mii\modules\gii\Generator */
 /* @var $results string */
 /* @var $hasError boolean */
 ?>

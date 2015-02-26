@@ -36,7 +36,7 @@ Add following lines to your main configuration file:
 'modules' => [
     ...
     'user' => [
-        'class' => 'app\modules\users\Module',
+        'class' => 'mii\modules\users\Module',
     ],
     ...
 ],

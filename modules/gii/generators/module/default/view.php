@@ -1,6 +1,6 @@
 <?php
 /* @var $this yii\web\View */
-/* @var $generator app\modules\gii\generators\module\Generator */
+/* @var $generator mii\modules\gii\generators\module\Generator */
 ?>
 <?php echo "<?php \$this->title = 'Hello wolrd!! - Yii2modular';?>\n"?>
 <div class="jumbotron text-center <?= $generator->moduleID . '-default-index' ?>">

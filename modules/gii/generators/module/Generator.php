@@ -5,9 +5,9 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace app\modules\gii\generators\module;
+namespace mii\modules\gii\generators\module;
 
-use app\modules\gii\CodeFile;
+use mii\modules\gii\CodeFile;
 use yii\helpers\Html;
 use Yii;
 use yii\helpers\StringHelper;
@@ -21,9 +21,9 @@ use yii\helpers\StringHelper;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class Generator extends \app\modules\gii\Generator
+class Generator extends \mii\modules\gii\Generator
 {
-    public $moduleClass='app\modules\mymodule\Module';
+    public $moduleClass='mii\modules\mymodule\Module';
     public $moduleID='mymodule';
 
 
@@ -75,7 +75,7 @@ class Generator extends \app\modules\gii\Generator
     {
         return [
             'moduleID' => 'This refers to the ID of the module, e.g., <code>admin</code>.',
-            'moduleClass' => 'This is the fully qualified class name of the module, e.g., <code>app\modules\admin\Module</code>.',
+            'moduleClass' => 'This is the fully qualified class name of the module, e.g., <code>mii\modules\admin\Module</code>.',
         ];
     }
 
@@ -153,7 +153,7 @@ EOD;
             $this->addError('moduleClass', 'Module class must be properly namespaced.');
         }
         if (empty($this->moduleClass) || substr_compare($this->moduleClass, '\\', -1, 1) === 0) {
-            $this->addError('moduleClass', 'Module class name must not be empty. Please enter a fully qualified class name. e.g. "app\\modules\\admin\\Module".');
+            $this->addError('moduleClass', 'Module class name must not be empty. Please enter a fully qualified class name. e.g. "mii\\modules\\admin\\Module".');
         }
     }
 

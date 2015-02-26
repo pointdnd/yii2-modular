@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\gii\models\base;
+namespace mii\modules\gii\models\base;
 
 use Yii;
 

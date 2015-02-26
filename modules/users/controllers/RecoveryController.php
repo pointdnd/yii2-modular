@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace app\modules\users\controllers;
+namespace mii\modules\users\controllers;
 
-use app\modules\users\Finder;
-use app\modules\users\models\RecoveryForm;
-use app\modules\users\models\Token;
+use mii\modules\users\Finder;
+use mii\modules\users\models\RecoveryForm;
+use mii\modules\users\models\Token;
 use yii\base\Model;
 use yii\web\Controller;
 use yii\filters\AccessControl;
@@ -24,7 +24,7 @@ use yii\widgets\ActiveForm;
 /**
  * RecoveryController manages password recovery process.
  *
- * @property \app\modules\users\Module $module
+ * @property \mii\modules\users\Module $module
  *
  * @author Dmitry Erofeev <dmeroff@gmail.com>
  */

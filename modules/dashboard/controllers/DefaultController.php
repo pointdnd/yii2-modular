@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\dashboard\controllers;
+namespace mii\modules\dashboard\controllers;
 
 use yii\web\Controller;
 use yii\filters\AccessControl;

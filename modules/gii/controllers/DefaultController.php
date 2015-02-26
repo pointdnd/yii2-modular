@@ -5,13 +5,13 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace app\modules\gii\controllers;
+namespace mii\modules\gii\controllers;
 
 use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use app\modules\gii\models\ModelGenerator;
-use app\modules\gii\models\CrudGenerator;
+use mii\modules\gii\models\ModelGenerator;
+use mii\modules\gii\models\CrudGenerator;
 
 /**
  * @author Qiang Xue <qiang.xue@gmail.com>
@@ -21,11 +21,11 @@ class DefaultController extends Controller
 {
     public $layout = 'generator';
     /**
-     * @var \app\modules\gii\Module
+     * @var \mii\modules\gii\Module
      */
     public $module;
     /**
-     * @var \app\modules\gii\Generator
+     * @var \mii\modules\gii\Generator
      */
     public $generator;
 
@@ -141,7 +141,7 @@ class DefaultController extends Controller
     /**
      * Loads the generator with the specified ID.
      * @param string $id the ID of the generator to be loaded.
-     * @return \app\modules\gii\Generator the loaded generator
+     * @return \mii\modules\gii\Generator the loaded generator
      * @throws NotFoundHttpException
      */
     protected function loadGenerator($id)

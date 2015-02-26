@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace app\modules\gii;
+namespace mii\modules\gii;
 
 use yii\web\AssetBundle;
 

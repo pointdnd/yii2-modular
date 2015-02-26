@@ -10,7 +10,7 @@
  */
 
 /**
- * @var $module app\modules\users\Module
+ * @var $module mii\modules\users\Module
  */
 
 ?>
