@@ -1,0 +1,262 @@
+{
+    "id": "50f5e28b-6fff-17e5-0136-4fc7b1d74a54",
+    "name": "Yii2modular-my-app",
+    "description": "Yii2modular My App rest documentation",
+    "order": [],
+    "folders": [
+        {
+            "id": "3a388037-31a6-dc9a-f3d4-f9c84704e070",
+            "name": "Test Module",
+            "description": "REST services for test module",
+            "order": [
+                "11a62c20-ba9b-9cbd-3a8c-9b47329dd82e",
+                "19053299-9aa0-3eab-da04-d6f59740b8a3",
+                "85b0cd19-1b85-6993-96bc-49d3942206eb"
+            ],
+            "collection_name": "Yii2modular-my-app",
+            "collection_id": "50f5e28b-6fff-17e5-0136-4fc7b1d74a54"
+        }
+    ],
+    "timestamp": 1423017303033,
+    "synced": false,
+    "remoteLink": "",
+    "requests": [
+        {
+            "id": "11a62c20-ba9b-9cbd-3a8c-9b47329dd82e",
+            "headers": "Authorization: Bearer cm9vdEBlbWFpbC5jb206cm9vdHJvb3Q=\n",
+            "url": "http://localhost/yii2modular/web/test/apis/8",
+            "preRequestScript": "",
+            "pathVariables": {},
+            "method": "POST",
+            "data": [
+                {
+                    "key": "description",
+                    "value": "This is a rest test...",
+                    "type": "text",
+                    "enabled": true
+                },
+                {
+                    "key": "image",
+                    "value": "123123132.png",
+                    "type": "text",
+                    "enabled": true
+                },
+                {
+                    "key": "state",
+                    "value": "1",
+                    "type": "text",
+                    "enabled": true
+                },
+                {
+                    "key": "name",
+                    "value": "asdasdasd",
+                    "type": "text",
+                    "enabled": true
+                },
+                {
+                    "key": "_method",
+                    "value": "GET",
+                    "type": "text",
+                    "enabled": true
+                }
+            ],
+            "dataMode": "params",
+            "version": 2,
+            "tests": "",
+            "currentHelper": "normal",
+            "helperAttributes": {},
+            "time": 1423084031443,
+            "name": "UPDATE",
+            "description": "Update a record selected",
+            "collectionId": "50f5e28b-6fff-17e5-0136-4fc7b1d74a54",
+            "responses": [
+                {
+                    "status": "",
+                    "responseCode": {
+                        "code": 403,
+                        "name": "Forbidden",
+                        "detail": "The request was a legal request, but the server is refusing to respond to it. Unlike a 401 Unauthorized response, authenticating will make no difference."
+                    },
+                    "time": 192,
+                    "headers": [
+                        {
+                            "name": "Connection",
+                            "key": "Connection",
+                            "value": "Keep-Alive",
+                            "description": "Options that are desired for the connection"
+                        },
+                        {
+                            "name": "Content-Length",
+                            "key": "Content-Length",
+                            "value": "111",
+                            "description": "The length of the response body in octets (8-bit bytes)"
+                        },
+                        {
+                            "name": "Content-Type",
+                            "key": "Content-Type",
+                            "value": "application/json; charset=UTF-8",
+                            "description": "The mime type of this content"
+                        },
+                        {
+                            "name": "Date",
+                            "key": "Date",
+                            "value": "Wed, 04 Feb 2015 21:07:56 GMT",
+                            "description": "The date and time that the message was sent"
+                        },
+                        {
+                            "name": "Keep-Alive",
+                            "key": "Keep-Alive",
+                            "value": "timeout=5, max=100",
+                            "description": "Custom header"
+                        },
+                        {
+                            "name": "Server",
+                            "key": "Server",
+                            "value": "Apache/2.4.10 (Unix) OpenSSL/1.0.1i PHP/5.5.15 mod_perl/2.0.8-dev Perl/v5.16.3",
+                            "description": "A name for the server"
+                        },
+                        {
+                            "name": "X-Powered-By",
+                            "key": "X-Powered-By",
+                            "value": "PHP/5.5.15",
+                            "description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+                        }
+                    ],
+                    "cookies": [],
+                    "mime": "",
+                    "text": "{\"name\":\"Forbidden\",\"message\":\"Login Required\",\"code\":0,\"status\":403,\"type\":\"yii\\\\web\\\\ForbiddenHttpException\"}",
+                    "language": "javascript",
+                    "rawDataType": "text",
+                    "state": {
+                        "size": "normal"
+                    },
+                    "previewType": "html",
+                    "searchResultScrolledTo": -1,
+                    "forceRaw": false,
+                    "id": "abd7b8a0-4406-115f-8389-ffa51b15a75b",
+                    "name": "Forbidden",
+                    "request": {
+                        "url": "http://localhost/yii2modular/web/test/apis/8",
+                        "pathVariables": {},
+                        "data": [
+                            {
+                                "key": "description",
+                                "value": "This is a rest test...",
+                                "type": "text",
+                                "enabled": true
+                            },
+                            {
+                                "key": "image",
+                                "value": "123123132.png",
+                                "type": "text",
+                                "enabled": true
+                            },
+                            {
+                                "key": "state",
+                                "value": "1",
+                                "type": "text",
+                                "enabled": true
+                            },
+                            {
+                                "key": "name",
+                                "value": "asdasdasd",
+                                "type": "text",
+                                "enabled": true
+                            },
+                            {
+                                "key": "_method",
+                                "value": "GET",
+                                "type": "text",
+                                "enabled": true
+                            }
+                        ],
+                        "headers": "Authorization: Bearer cm9vdEBlbWFpbC5jb206cm9vdHJvb3Q=\n",
+                        "dataMode": "params",
+                        "method": "POST",
+                        "tests": "",
+                        "version": 2
+                    }
+                }
+            ],
+            "synced": false
+        },
+        {
+            "id": "19053299-9aa0-3eab-da04-d6f59740b8a3",
+            "headers": "Authorization: Bearer cm9vdEBlbWFpbC5jb206cm9vdHJvb3Q=\n",
+            "url": "http://localhost/yii2modular/web/test/apis?fields=name,description,image",
+            "preRequestScript": "",
+            "pathVariables": {},
+            "method": "POST",
+            "data": [
+                {
+                    "key": "_method",
+                    "value": "GET",
+                    "type": "text",
+                    "enabled": true
+                }
+            ],
+            "dataMode": "params",
+            "version": 2,
+            "tests": "",
+            "currentHelper": "normal",
+            "helperAttributes": {},
+            "time": 1423017612753,
+            "name": "GET",
+            "description": "Get a list of record",
+            "collectionId": "50f5e28b-6fff-17e5-0136-4fc7b1d74a54",
+            "responses": [],
+            "synced": false
+        },
+        {
+            "id": "85b0cd19-1b85-6993-96bc-49d3942206eb",
+            "headers": "Authorization: Bearer cm9vdEBlbWFpbC5jb206cm9vdHJvb3Q=\n",
+            "url": "http://localhost/yii2modular/web/test/apis/8",
+            "preRequestScript": "",
+            "pathVariables": {},
+            "method": "POST",
+            "data": [
+                {
+                    "key": "description",
+                    "value": "This is a rest test...",
+                    "type": "text",
+                    "enabled": true
+                },
+                {
+                    "key": "image",
+                    "value": "123123132.png",
+                    "type": "text",
+                    "enabled": true
+                },
+                {
+                    "key": "state",
+                    "value": "1",
+                    "type": "text",
+                    "enabled": true
+                },
+                {
+                    "key": "name",
+                    "value": "asdasdasd",
+                    "type": "text",
+                    "enabled": true
+                },
+                {
+                    "key": "_method",
+                    "value": "PUT",
+                    "type": "text",
+                    "enabled": true
+                }
+            ],
+            "dataMode": "params",
+            "version": 2,
+            "tests": "",
+            "currentHelper": "normal",
+            "helperAttributes": {},
+            "time": 1423017377651,
+            "name": "CREATE",
+            "description": "Create a new record with the following fields\n\n- **description** *(String)* required\n- **image** *(String)* required\n- **state** *(Boolean 1 or 0)* required\n",
+            "collectionId": "50f5e28b-6fff-17e5-0136-4fc7b1d74a54",
+            "responses": [],
+            "synced": false
+        }
+    ]
+}

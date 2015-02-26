@@ -1,0 +1,21 @@
+{
+    "name": "mii/yii2-modular",
+    "description": "Yii2modular just reuse",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gustavo Salgado",
+            "email": "gsalgadotoledo@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": ""
+        }
+    }
+}
