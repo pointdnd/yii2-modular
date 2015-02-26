@@ -1,5 +1,5 @@
 <?php
-namespace mii\components\uploader;
+namespace mii\uploader;
 
 class SimpleImage {
 

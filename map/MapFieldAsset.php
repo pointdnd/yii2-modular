@@ -1,11 +1,11 @@
 <?php
-namespace mii\components\map;
+namespace mii\map;
 use yii\web\AssetBundle;
 
 class MapFieldAsset extends AssetBundle
 {
 
-    public $sourcePath = '@app/components/map/js';
+    public $sourcePath = '@mii/map/js';
     public $jsOptions = [
         'position'=>\yii\web\View::POS_HEAD
     ];

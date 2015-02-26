@@ -1,7 +1,7 @@
 <?php
-namespace mii\components\textfield;
+namespace mii\textfield;
 
-use mii\components\textfield\TextFieldAsset;
+use mii\textfield\TextFieldAsset;
 use yii\widgets\InputWidget;
 use yii\helpers\Html;
 

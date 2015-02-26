@@ -1,7 +1,7 @@
 <?php
-namespace mii\components\uploader;
+namespace mii\uploader;
 
-use mii\components\uploader\UploadAsset;
+use mii\uploader\UploadAsset;
 use yii\widgets\InputWidget;
 use yii\helpers\Html;
 

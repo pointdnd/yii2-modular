@@ -1,7 +1,7 @@
 <?php
-namespace mii\components\map;
+namespace mii\map;
 
-use mii\components\map\MapFieldAsset;
+use mii\map\MapFieldAsset;
 use yii\widgets\InputWidget;
 use yii\helpers\Html;
 

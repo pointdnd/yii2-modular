@@ -42,7 +42,7 @@ class Generator extends \mii\modules\gii\Generator
     public $modelClass;
     public $controllerClass;
     public $viewPath;
-    public $baseControllerClass = 'mii\components\web\Controller';
+    public $baseControllerClass = 'mii\web\Controller';
     // public $baseControllerClass = 'yii\web\Controller';
     public $indexWidgetType = 'grid';
     public $searchModelClass = '';

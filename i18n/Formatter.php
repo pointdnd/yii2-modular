@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace mii\components\i18n;
+namespace mii\i18n;
 
 class Formatter extends \yii\i18n\Formatter
 {

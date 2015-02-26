@@ -1,6 +1,6 @@
 <?php
 
-namespace mii\components;
+namespace mii;
 
 use mii\modules\users\Mailer;
 use tests\codeception\_support\MailHelper;

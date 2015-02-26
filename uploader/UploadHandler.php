@@ -1,6 +1,6 @@
 <?php
 
-namespace mii\components\uploader;
+namespace mii\uploader;
 /**
  * GUpload class file.
  *
@@ -29,8 +29,8 @@ namespace mii\components\uploader;
  * @package system.web.uploader
  * @since 1.0
  */
-use mii\components\uploader\SimpleImage;
-use mii\components\uploader\qqUploadedFileXhr;
+use mii\uploader\SimpleImage;
+use mii\uploader\qqUploadedFileXhr;
 
 class UploadHandler
 {

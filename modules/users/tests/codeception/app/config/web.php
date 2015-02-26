@@ -17,7 +17,7 @@ return [
             'class' => 'mii\modules\users\Module',
             'admins' => ['user'],
             'mailer' => [
-                'class' => 'mii\components\MailerMock',
+                'class' => 'mii\MailerMock',
             ],
         ]
     ],

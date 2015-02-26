@@ -1,6 +1,6 @@
 <?php
 
-namespace mii\components\rest;
+namespace mii\rest;
 
 use Yii;
 use mii\modules\users\models\User;
@@ -23,7 +23,7 @@ use yii\filters\AccessControl;
 class ActiveController extends \yii\rest\Controller
 {
     public $serializer = [ 
-       'class'=>'mii\components\rest\Serializer', 
+       'class'=>'mii\rest\Serializer', 
     ];
 
     public function init()

@@ -1,7 +1,7 @@
 <?php
-namespace mii\components\widgets;
+namespace mii\widgets;
 
-use mii\components\widgets\WidgetsInputAsset;
+use mii\widgets\WidgetsInputAsset;
 use yii\widgets\InputWidget;
 use yii\helpers\Html;
 

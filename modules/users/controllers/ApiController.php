@@ -21,7 +21,7 @@ use yii\web\ServerErrorHttpException;
 /**
  * ApiController implements the CRUD actions for User model.
  */
-class ApiController extends \mii\components\rest\ActiveController
+class ApiController extends \mii\rest\ActiveController
 {
     public $modelClass = 'mii\modules\users\models\User';
 

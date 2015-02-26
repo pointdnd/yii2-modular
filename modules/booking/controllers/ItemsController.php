@@ -5,7 +5,7 @@ namespace mii\modules\booking\controllers;
 use Yii;
 use mii\modules\booking\models\Items;
 use mii\modules\booking\models\ItemsSearch;
-use mii\components\web\Controller;
+use mii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 

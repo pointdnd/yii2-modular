@@ -52,7 +52,7 @@ use yii\web\ServerErrorHttpException;
 /**
  * <?= $controllerClass ?> implements the CRUD actions for <?= $modelClass ?> model.
  */
-class <?= $controllerClass ?> extends <?= '\mii\components\rest\ActiveController' . "\n" ?>
+class <?= $controllerClass ?> extends <?= '\mii\rest\ActiveController' . "\n" ?>
 {
     public $modelClass = '<?= ltrim($generator->modelClass, '\\') ?>';
     

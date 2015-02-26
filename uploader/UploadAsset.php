@@ -1,11 +1,11 @@
 <?php
-namespace mii\components\uploader;
+namespace mii\uploader;
 use yii\web\AssetBundle;
 
 class UploadAsset extends AssetBundle
 {
 
-    public $sourcePath = '@app/components/uploader/js';
+    public $sourcePath = '@mii/uploader/js';
     public $jsOptions = [
         'position'=>\yii\web\View::POS_HEAD
     ];

@@ -1,11 +1,11 @@
 <?php
-namespace mii\components\textfield;
+namespace mii\textfield;
 use yii\web\AssetBundle;
 
 class TextFieldAsset extends AssetBundle
 {
 
-    public $sourcePath = '@app/components/textfield/js';
+    public $sourcePath = '@mii/textfield/js';
     public $jsOptions = [
         'position'=>\yii\web\View::POS_HEAD
     ];

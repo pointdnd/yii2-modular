@@ -1,5 +1,5 @@
 <?php
-namespace mii\components\uploader;
+namespace mii\uploader;
 /****************************************
 Example of how to use this uploader class...
 You can uncomment the following lines (minus the require) to use these as your defaults.
