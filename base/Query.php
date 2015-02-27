@@ -1,6 +1,6 @@
 <?php
 
-namespace mii\yquery;
+namespace mii\base;
 
 /**
  * Wrhite less do more

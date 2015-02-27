@@ -1,6 +1,6 @@
 <?php
 
-namespace mii\yquery;
+namespace mii;
 
 /**
  * Wrhite less do more
@@ -8,7 +8,7 @@ namespace mii\yquery;
  * @author Gustavo Salgado <gsalgadotoledo@gmail.com>
  * @since 1.0
  */
-class Yquery extends \yii\base\Component {
+class Mii extends \yii\base\Component {
 
 	protected $_aliasesDefault;
 	
@@ -42,7 +42,7 @@ class Yquery extends \yii\base\Component {
 	{
 		parent::init();
 		if($this->_aliasesDefault===null)
-			$this->_aliasesDefault = include(__DIR__."/classes.php");
+			$this->_aliasesDefault = include(__DIR__."/base/classes.php");
 		$this->aliases=array_merge($this->_aliasesDefault,$this->aliases);
 	}
 
@@ -83,7 +83,7 @@ class Yquery extends \yii\base\Component {
 			if(!\Yii::$container->hasSingleton($one)) {
 
 				return \Yii::$container->setSingleton($one,[
-					'class'=>'mii\yquery\Query',
+					'class'=>'mii\base\Query',
 					'selector'=>$this->aliases[$one],
 				])->get($one);
 
