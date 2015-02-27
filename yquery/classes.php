@@ -11,6 +11,17 @@
  */
 
 return [
+
+  'User'=>'\mii\modules\users\models\User',
+  'Upload'=>'\mii\uploader\Upload',
+  'Map'=>'\mii\map\Map',
+  'TextField'=>'\mii\textfield\TextField',
+  'TextArea'=>'\mii\textfield\TextArea',
+  'TimeAgo'=>'\yii\timeago\TimeAgo',
+  'DatePicker'=>'\yii\jui\DatePicker',
+  'DateTimePicker'=>'\dosamigos\datetimepicker\DateTimePicker',
+  'CKEditor'=>'\dosamigos\ckeditor\CKEditor',
+
   
   // Short aliases for access static helpers like components
   '.log'=>'\yii\BaseYii',

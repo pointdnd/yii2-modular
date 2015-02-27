@@ -18,9 +18,7 @@
         "yiisoft/yii2-jui": "*",
         "kartik-v/yii2-widgets": "*",
         "2amigos/yii2-date-time-picker-widget" : "*",
-        "yiidoc/yii2-timeago": "dev-master",
-        "mii/yii2-yquery": "dev-master"
-        
+        "yiidoc/yii2-timeago": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
