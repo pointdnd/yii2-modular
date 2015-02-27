@@ -81,7 +81,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
     public $admins = ['root','admin'];
     
     /** @var array An array of administrator's usernames will be redirected. */
-    public $adminRedirect = ['/dashboard'];
+    public $adminRedirect = ['/admin'];
     
     /** @var array An array of normal's usernames will be redirected. if this value is true redirect to userprofile profile/show*/
     public $userProfileRedirect = true;

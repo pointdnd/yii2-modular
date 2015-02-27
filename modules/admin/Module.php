@@ -1,10 +1,10 @@
 <?php
 
-namespace mii\modules\dashboard;
+namespace mii\modules\admin;
 
 class Module extends \yii\base\Module
 {
-    public $controllerNamespace = 'mii\modules\dashboard\controllers';
+    public $controllerNamespace = 'mii\modules\admin\controllers';
 
     public function init()
     {
