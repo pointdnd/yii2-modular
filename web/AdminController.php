@@ -1,16 +1,16 @@
 <?php
 
-namespace mii\modules\admin\controllers;
+namespace mii\web;
 
-use yii\filters\AccessControl;
-
-class DefaultController extends \mii\web\AdminController
+class AdminController extends \mii\web\Controller
 {
+	$layout = '/admin';
+
     public function behaviors()
     {
         return [
             'access' => [
-                'class' => AccessControl::className(),
+                'class' => \yii\filters\AccessControl::className(),
                 'rules' => [
                     [
                         'actions' => ['index'],
@@ -23,11 +23,5 @@ class DefaultController extends \mii\web\AdminController
                 ]
             ]
         ];
-    }
-
-    public function actionIndex()
-    {
-    	$this->layout = '/admin';
-        return $this->render('index');
     }
 }

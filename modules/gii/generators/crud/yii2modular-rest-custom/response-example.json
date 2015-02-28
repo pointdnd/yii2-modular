@@ -124,7 +124,7 @@
                     ],
                     "cookies": [],
                     "mime": "",
-                    "text": "{\"name\":\"Forbidden\",\"message\":\"Login Required\",\"code\":0,\"status\":403,\"type\":\"yii\\\\web\\\\ForbiddenHttpException\"}",
+                    "text": "{\"name\":\"Forbidden\",\"message\":\"Login Required\",\"code\":0,\"status\":403,\"type\":\"yii\\web\\ForbiddenHttpException\"}",
                     "language": "javascript",
                     "rawDataType": "text",
                     "state": {
