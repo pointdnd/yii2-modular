@@ -4,7 +4,7 @@ namespace mii\web;
 
 class AdminController extends \mii\web\Controller
 {
-	$layout = '/admin';
+	public $layout = '@app/views/layouts/admin';
 
     public function behaviors()
     {
