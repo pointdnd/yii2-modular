@@ -9,7 +9,7 @@ class SiteController extends \mii\web\Controller
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
-                // 'view' => '@app/config/views/error',
+                'view' => '@app/views/error',
             ],
         ];
     }
