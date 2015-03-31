@@ -57,7 +57,7 @@ class Mii extends \yii\base\Component {
 		}
 
 		if($one===null && $two===null && $three===null) {
-			return \Yii::$container;
+			return \Yii::$app;
 		}
 	
 		if(is_string($one) && is_string($two) && $three===null) {
