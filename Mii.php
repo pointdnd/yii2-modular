@@ -48,8 +48,8 @@ class Mii extends \yii\base\Component {
 
     public function run($one=null,$two=null,$three=null) {
 		
-		if(is_string($one) && $one==='app' && $two===null) {
-    		return \Yii::$app;
+		if(is_string($one) && $one==='c' && $two===null) {
+    		return \Yii::$container;
 		}
 
 		if(is_array($one)) {
@@ -94,6 +94,6 @@ class Mii extends \yii\base\Component {
 		if(is_string($one) && stripos($one, '@')!==false && $two!==null) {
 			return \Yii::setAlias($one,$two);
 		}
-		return \Yii::$container;
+		return \Yii::$app;
 	}
 }
