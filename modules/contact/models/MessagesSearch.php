@@ -18,7 +18,7 @@ class MessagesSearch extends Messages
     public function rules()
     {
         return [
-            [['id', 'created_at'], 'integer'],
+            [['id', 'created_at', 'sent', 'read'], 'integer'],
             [['name', 'email', 'phone', 'message'], 'safe'],
         ];
     }
@@ -54,6 +54,8 @@ class MessagesSearch extends Messages
         $query->andFilterWhere([
             'id' => $this->id,
             'created_at' => $this->created_at,
+            'sent' => $this->sent,
+            'read' => $this->read,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])

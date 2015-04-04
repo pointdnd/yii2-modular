@@ -36,6 +36,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'phone',
             'message:ntext',
             'created_at',
+            'sent',
+            'read',
         ],
     ]) ?>
 

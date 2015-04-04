@@ -21,8 +21,19 @@ class DefaultController extends Controller
 
     public function actionCron()
     {
-        
-        // Send messages
+        $model = Messages::find()->where(['sent'=>'0'])->all();
+        foreach($model as $data) {
+            
+            // Send messages
+            y('.mailer')->compose(['email' => $data->email])
+            ->setHtmlBody($this->renderPartial('email',['model'=>$data]))
+            ->setFrom('info@retalapp.com')
+            ->setTo('info@retalapp.com')
+            ->setSubject('Cotizador Retalapp')
+            ->send();
+            $data->sent=1;
+            $data->save(true,['sent']);
+        }
     }
 
     /**

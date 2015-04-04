@@ -288,22 +288,38 @@ class Generator extends \mii\modules\gii\Generator
     {
         $types = [];
         $uniques = [];
+        $booleans = [];
         $lengths = [];
         $emails = [];
         $links = [];
+        $slugs = [];
+        $times = [];
+        $dateTimes = [];
+        $dates = [];
         $module = y('#gii');
         foreach ($table->columns as $column) {
             $commentType=$module->getParamsField($column);
             if($commentType['type']==='email') {
                 $emails[]=$column->name;
             }
-            if($commentType['type']==='unique') {
+            if($commentType['type']==='unique' || $commentType['type']==='slug') {
                 $uniques[]=$column->name;
             }
             if($commentType['type']==='link' || $commentType['type']==='video') {
                 $links[]=$column->name;
             }
-   
+            if($commentType['type']==='boolean') {
+                $booleans[]=$column->name;
+            }
+            if($commentType['type']==='date') {
+                $dates[]=$column->name;
+            }
+            if($commentType['type']==='datetime') {
+                $dateTimes[]=$column->name;
+            }
+            if($commentType['type']==='time') {
+                $times[]=$column->name;
+            }
             if ($column->autoIncrement) {
                 continue;
             }
@@ -343,6 +359,7 @@ class Generator extends \mii\modules\gii\Generator
             $rules[] = "[['" . implode("', '", $columns) . "'], '$type']";
         }
         if ($emails!==array()) {
+            $rules[] = "[['" . implode("', '", $emails) . "'], 'trim']";
             $rules[] = "[['" . implode("', '", $emails) . "'], 'email']";
         }
         if ($uniques!==array()) {
@@ -350,6 +367,18 @@ class Generator extends \mii\modules\gii\Generator
         }
         if ($links!==array()) {
             $rules[] = "[['" . implode("', '", $links) . "'], 'url']";
+        }
+        if ($booleans!==array()) {
+            $rules[] = "[['" . implode("', '", $booleans) . "'], 'boolean']";
+        }
+        if ($times!==array()) {
+            $rules[] = "[['" . implode("', '", $times) . "'], 'date', 'format'=>'HH:mm:ss']";
+        }
+        if ($dates!==array()) {
+            $rules[] = "[['" . implode("', '", $dates) . "'], 'date', 'format'=>'yyyy-MM-dd']";
+        }
+        if ($dateTimes!==array()) {
+            $rules[] = "[['" . implode("', '", $dateTimes) . "'], 'date', 'format'=>'yyyy-MM-dd HH:mm:ss']";
         }
         foreach ($lengths as $length => $columns) {
             $rules[] = "[['" . implode("', '", $columns) . "'], 'string', 'max' => $length]";

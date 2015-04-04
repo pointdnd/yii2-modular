@@ -46,6 +46,14 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'message')->textarea(['rows' => 6]) ?>
 
     </div>
+    <div class="col-lg-6">
+    <?= $form->field($model, 'sent')->checkbox() ?>
+
+    </div>
+    <div class="col-lg-6">
+    <?= $form->field($model, 'read')->checkbox() ?>
+
+    </div>
     </div>
     <div class="form-group text-right">
         <?= Html::submitButton($model->isNewRecord ? '<i class="fa fa-save"></i> ' . 'Create' : '<i class="fa fa-save"></i> ' . 'Update', ['class' => 'btn btn-primary']) ?>

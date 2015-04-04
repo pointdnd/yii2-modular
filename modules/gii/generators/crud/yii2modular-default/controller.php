@@ -174,8 +174,8 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
      *          });
      *
      *          if(data.success) {
-     *            // here submit 
-     *            alert(data.message);
+     *            $form[0].reset();
+     *            bootbox.alert(data.message);
      *
      *          } else {
      *
