@@ -76,6 +76,9 @@ class UserSearch extends Model
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
+        
+        $query->andFilterWhere(['<>','username','root']);
+
 
         if (!($this->load($params) && $this->validate())) {
             return $dataProvider;

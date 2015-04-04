@@ -33,10 +33,10 @@ use mii\modules\gii\models\CrudGenerator;
 class Generator extends \mii\modules\gii\Generator
 {
     public $templates = [
-        'default' => '@app/modules/gii/generators/crud/yii2modular-default',
-        'FRONT-page' => '@app/modules/gii/generators/crud/yii2modular-page',
-        'REST-active' => '@app/modules/gii/generators/crud/yii2modular-rest-active',
-        'REST-custom' => '@app/modules/gii/generators/crud/yii2modular-rest-custom',
+        'default' => '@mii/modules/gii/generators/crud/yii2modular-default',
+        'FRONT-page' => '@mii/modules/gii/generators/crud/yii2modular-page',
+        'REST-active' => '@mii/modules/gii/generators/crud/yii2modular-rest-active',
+        'REST-custom' => '@mii/modules/gii/generators/crud/yii2modular-rest-custom',
     ];
 
     public $modelClass;
@@ -254,7 +254,7 @@ EOD;
             return $output . '<pre>' . highlight_string($code, true) . '</pre>';
         }
 
-        return 'The code has been generated successfully.';
+        return 'The code has been generated successfully.<br>\'/\'.$this->id.\'/'.$this->getControllerID().'/index\'';
     }
 
     /**

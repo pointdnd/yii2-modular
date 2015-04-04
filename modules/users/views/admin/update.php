@@ -98,3 +98,34 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a(Yii::t('users', 'Back'), ['index'], ['class' => 'btn btn-default']) ?>
 </div>
 <?php ActiveForm::end(); ?>
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <?= Yii::t('users', 'Update roles') ?>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                <tr>
+                    <th colspan="2"><?=y('app','Roles')?></th>
+                </tr>
+                <?php foreach(\mii\modules\users\models\AuthItems::find()->where(['type'=>1])->all() as $data):?>
+                <?php if($data->name==='root') continue;?>
+                <tr>
+                    <td>
+                        <?=$data->name?> 
+                    </td>
+                    <td class="text-right">
+                    <?php if(y('.authManager')->checkAccess($user->id,$data->name)):?>
+                        <a href="#" class="btn btn-success">Enabled</a>
+                    <?php else:?>
+                        <a href="#" class="btn btn-danger">Disabled</a>
+                    <?php endif;?>
+                    </td>
+                </tr>
+                <?php endforeach;?>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

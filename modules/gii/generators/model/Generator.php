@@ -287,8 +287,23 @@ class Generator extends \mii\modules\gii\Generator
     public function generateRules($table)
     {
         $types = [];
+        $uniques = [];
         $lengths = [];
+        $emails = [];
+        $links = [];
+        $module = y('#gii');
         foreach ($table->columns as $column) {
+            $commentType=$module->getParamsField($column);
+            if($commentType['type']==='email') {
+                $emails[]=$column->name;
+            }
+            if($commentType['type']==='unique') {
+                $uniques[]=$column->name;
+            }
+            if($commentType['type']==='link' || $commentType['type']==='video') {
+                $links[]=$column->name;
+            }
+   
             if ($column->autoIncrement) {
                 continue;
             }
@@ -326,6 +341,15 @@ class Generator extends \mii\modules\gii\Generator
         $rules = [];
         foreach ($types as $type => $columns) {
             $rules[] = "[['" . implode("', '", $columns) . "'], '$type']";
+        }
+        if ($emails!==array()) {
+            $rules[] = "[['" . implode("', '", $emails) . "'], 'email']";
+        }
+        if ($uniques!==array()) {
+            $rules[] = "[['" . implode("', '", $uniques) . "'], 'unique']";
+        }
+        if ($links!==array()) {
+            $rules[] = "[['" . implode("', '", $links) . "'], 'url']";
         }
         foreach ($lengths as $length => $columns) {
             $rules[] = "[['" . implode("', '", $columns) . "'], 'string', 'max' => $length]";

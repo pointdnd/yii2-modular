@@ -2,19 +2,19 @@
 
 namespace mii\modules\outlet\models;
 
-use mii\modules\outlet\models\base\BaseProjects;
+use mii\modules\outlet\models\base\BaseQuestions;
 use Yii;
 
 /**
- * This is the model class for table "outlet_projects".
+ * This is the model class for table "outlet_questions".
  *
  * @property integer $id
- * @property string $name
- * @property string $description
- * @property string $image
+ * @property string $question
+ * @property string $response
+ * @property string $icon
  * @property integer $order_id
  */
-class Projects extends BaseProjects
+class Questions extends BaseQuestions
 {
     /**
      * @inheritdoc

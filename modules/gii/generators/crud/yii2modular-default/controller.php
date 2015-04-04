@@ -40,6 +40,7 @@ use yii\data\ActiveDataProvider;
 use <?= ltrim($generator->baseControllerClass, '\\') ?>;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * <?= $controllerClass ?> implements the CRUD actions for <?= $modelClass ?> model.
@@ -69,6 +70,18 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['post'],
+                ],
+            ],
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['create', 'update', 'index', 'delete', 'view','createAjax', 'updateAjax', 'indexAjax', 'deleteAjax', 'viewAjax'],
+                'rules' => [
+                    // allow authenticated users
+                    [
+                        'allow' => true,
+                        'roles' => ['root','admin'],
+                    ],
+                    // everything else is denied by default
                 ],
             ],
         ];
@@ -133,6 +146,66 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
             return $this->render('create', [
                 'model' => $model,
             ]);
+        }
+    }
+
+    /**
+     * Creates a new <?= $modelClass ?> model.
+     * If creation is successful, the response will be a 'success'=true.
+     * @return mixed
+     *   
+     *  $(document).on('submit','#<?= strtolower($modelClass) ?>-form',function(e) {
+     *    e.preventDefault();
+     *    var $form = $(this);
+     *    $.ajax({
+     *        url: '<?php echo "<?php echo y('.urlManager')->createUrl(\"/module/controller/create-ajax\");?>"?>',
+     *        dataType: 'json', 
+     *        type: 'post',
+     *        data: $form.serialize(),
+     *        success: function (data){
+     *
+     *          console.log(data);
+     *
+     *          $.each($form.serializeArray(), function(index, name) {
+     *            $('[name='+name.name+']')
+     *              .parent()
+     *              .find('#validate-'+name.name)
+     *              .remove();
+     *          });
+     *
+     *          if(data.success) {
+     *            // here submit 
+     *            alert(data.message);
+     *
+     *          } else {
+     *
+     *            $.each(data.data, function(name, errors) {
+     *              $('[name='+name+']')
+     *              .parent()
+     *              .append($('<p id="validate-'+name+'" class="help-block text-danger">'+errors.join(',<br>')+'</p>'));
+     *            });
+     *          }
+     *        }
+     *    });
+     *  });
+     *
+    */
+    public function actionCreateAjax()
+    {
+        y('.response')->format = 'json';
+        $model = new <?= $modelClass ?>();
+        $model->attributes=$_REQUEST;
+        if ($model->save()) { 
+            return [
+                'success'=>1,
+                'data'=>$model,
+                'message'=>y('app','Record created!')
+            ];
+        } else {
+            return [
+                'success'=>0,
+                'data'=>$model->getErrors()
+            ];
         }
     }
 

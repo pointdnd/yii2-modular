@@ -1,13 +1,13 @@
 <?php
 
-namespace mii\modules\outlet;
+namespace mii\modules\contact;
 use yii\base\BootstrapInterface;
 use yii\web\GroupUrlRule;
 use yii\console\Application as ConsoleApplication;
 
 class Module extends \yii\base\Module implements BootstrapInterface
 {
-    public $controllerNamespace = 'mii\modules\outlet\controllers';
+    public $controllerNamespace = 'mii\modules\contact\controllers';
 
     public function init()
     {
@@ -20,10 +20,10 @@ class Module extends \yii\base\Module implements BootstrapInterface
     public function bootstrap($app)
     {
         /** @var $module Module */
-        if ($app->hasModule('outlet') && ($module = $app->getModule('outlet')) instanceof Module) {
+        if ($app->hasModule('contact') && ($module = $app->getModule('contact')) instanceof Module) {
             
             if ($app instanceof ConsoleApplication) {
-                $module->controllerNamespace = 'mii\modules\outlet\commands';
+                $module->controllerNamespace = 'app\modules\contact\commands';
 
             } else {
 				// config urls example
@@ -36,7 +36,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
 
                 /**
 				 * $configUrlRule = [
-				 *    'prefix' => 'outlet',
+				 *    'prefix' => 'contact',
 				 *    'rules'  => [
 				 *       // Put here your module group rules
 				 *    ]
@@ -51,8 +51,8 @@ class Module extends \yii\base\Module implements BootstrapInterface
     public function getMenuAdmin()
     {
         return array(
-            array('label'=>\Yii::t('app','Outlet'), 'icon'=>'fa fa-folder-open', 'url'=>array('#'), 'items'=>array(
-                array('label'=>\Yii::t('app','Proyects'), 'url'=>array("/{$this->id}/projects/index")),
+            array('label'=>\Yii::t('app','Contact'), 'icon'=>'fa fa-folder-open', 'url'=>array('#'), 'items'=>array(
+                array('label'=>\Yii::t('app','List of contact'), 'url'=>array('/'.$this->id.'/messages/index')),
             )),
         );
     }

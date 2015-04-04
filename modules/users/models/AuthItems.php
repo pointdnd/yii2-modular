@@ -1,20 +1,26 @@
 <?php
 
-namespace mii\modules\outlet\models;
+namespace mii\modules\users\models;
 
-use mii\modules\outlet\models\base\BaseProjects;
+use mii\modules\users\models\base\BaseAuthItems;
 use Yii;
 
 /**
- * This is the model class for table "outlet_projects".
+ * This is the model class for table "users_auth_item".
  *
- * @property integer $id
  * @property string $name
+ * @property integer $type
  * @property string $description
- * @property string $image
- * @property integer $order_id
+ * @property string $rule_name
+ * @property string $data
+ * @property integer $created_at
+ * @property integer $updated_at
+ *
+ * @property UsersAuthAssignment[] $usersAuthAssignments
+ * @property UsersAuthRule $ruleName
+ * @property UsersAuthItemChild[] $usersAuthItemChildren
  */
-class Projects extends BaseProjects
+class AuthItems extends BaseAuthItems
 {
     /**
      * @inheritdoc

@@ -237,6 +237,22 @@ foreach($tableSchema->columns as $name=>$column)
 <?php elseif ($column->type=='datetime'): ?>
             $this->setAttribute('<?=$column->name?>', date("Y-m-d H:i:s"));
 <?php endif; ?>
+<?php if ($column->name=='order_id'): 
+echo "\t\t\t// In oreder to create chronologically asc \n";
+echo "\t\t\t//\$last=".$this->modelClass."::find()->all();\n";
+echo "\t\t\t//\$this->order_id=count(\$last)+1;\n";
+echo "\t\t\t// In oreder to create chronologically desc \n";
+echo "\t\t\t\$last=".$this->modelClass."::find()->where(['order'=>'order_id'])->all();\n";
+echo "\t\t\t\$i=2;\n";
+echo "\t\t\tforeach(\$last as \$data)\n";
+echo "\t\t\t{\n";
+echo "\t\t\t\t\$data->order_id=\$i++;\n";
+echo "\t\t\t\t\$data->save(true,['order_id']);\n";
+echo "\t\t\t}\n";
+echo "\t\t\t\$this->order_id=1;\n";
+?>
+            $this->setAttribute('<?=$column->name?>', date("Y-m-d H:i:s"));
+<?php endif; ?>
         }
 <?php endif; ?>
 <?php if ($column->name=='updated_at'): ?>

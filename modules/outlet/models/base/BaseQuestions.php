@@ -8,54 +8,50 @@ use Yii;
  * Examples how to use for retrive data
  * 
  * Update one record  
- * $model=Projects::findOne($id);
+ * $model=Questions::findOne($id);
  * // Or create a new record
- * // $model=new Projects;
- * $model->name='value';
- * $model->description='value';
- * $model->image='value';
- * $last=Projects::find()->count();
+ * // $model=new Questions;
+ * $model->question='value';
+ * $model->response='value';
+ * $model->icon='value';
+ * $last=Questions::find()->count();
  * $model->order_id=count($last)+1;
  * $model->save();
  *
  *
  * Retrive Severals records
- * $outlet_projects=Projects::find()->orderBy('order_id')->all();
- * <?php foreach($outlet_projects as $data): ?>
+ * $outlet_questions=Questions::find()->orderBy('order_id')->all();
+ * <?php foreach($outlet_questions as $data): ?>
  * <?=$data->id;?>
- * <?=$data->name;?>
- * <?= \Yii::$app->formatter->toBr($data->description);?>
- * <?=$data->imagePath;?>
- * <?= \yii\helpers\Html::image($data->imagePath,'',array('class'=>'img-responsive img-thumbnail'));?>
+ * <?=$data->question;?>
+ * <?=$data->response;?>
+ * <?=$data->icon;?>
  * <?=$data->order_id;?>
  * <?php endforeach; ?>
  * 
  *
  * Retrive first record
- * $outlet_projects=Projects::model()->find()->one();
- * <?=$outlet_projects->id;?>
- * <?=$outlet_projects->name;?>
- * <?= \Yii::$app->formatter->toBr($outlet_projects->description);?>
- * <?=$outlet_projects->imagePath;?>
- * <?= \yii\helpers\Html::image($outlet_projects->imagePath,'',array('class'=>'img-responsive img-thumbnail'));?>
- * <?=$outlet_projects->order_id;?>
+ * $outlet_questions=Questions::model()->find()->one();
+ * <?=$outlet_questions->id;?>
+ * <?=$outlet_questions->question;?>
+ * <?=$outlet_questions->response;?>
+ * <?=$outlet_questions->icon;?>
+ * <?=$outlet_questions->order_id;?>
  * 
- * This is the model class for table "outlet_projects".
+ * This is the model class for table "outlet_questions".
  *
  * @property integer $id
- * @property string $name
- * @property string $description
- * @property string $image
+ * @property string $question
+ * @property string $response
+ * @property string $icon
  * @property integer $order_id
  */
-class BaseProjects extends \yii\db\ActiveRecord
+class BaseQuestions extends \yii\db\ActiveRecord
 {
-	public $image_path;
 
     public function afterFind()
     {
         parent::afterFind();
-		$this->image_path = \Yii::getAlias('@web/uploads').'/'.$this->image;
     }
 
     /**
@@ -63,7 +59,7 @@ class BaseProjects extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'outlet_projects';
+        return 'outlet_questions';
     }
 
     /**
@@ -72,11 +68,11 @@ class BaseProjects extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'description', 'image', 'order_id'], 'required'],
-            [['description'], 'string'],
+            [['question', 'response', 'icon', 'order_id'], 'required'],
+            [['response'], 'string'],
             [['order_id'], 'integer'],
-            [['name'], 'string', 'max' => 255],
-            [['image'], 'string', 'max' => 100]
+            [['question'], 'string', 'max' => 255],
+            [['icon'], 'string', 'max' => 100]
         ];
     }
 
@@ -87,9 +83,9 @@ class BaseProjects extends \yii\db\ActiveRecord
         return [
             // field name is the same as the attribute name
 			'id',
-			'name',
-			'description',
-			'image',
+			'question',
+			'response',
+			'icon',
             // field name is "email", the corresponding attribute name is "email_address"
             // 'email' => 'email_address',
             // field name is "name", its value is defined by a PHP callback
@@ -113,9 +109,9 @@ class BaseProjects extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'description' => 'Description',
-            'image' => 'Image',
+            'question' => 'Question',
+            'response' => 'Response',
+            'icon' => 'Icon',
             'order_id' => 'Order ID',
         ];
     }

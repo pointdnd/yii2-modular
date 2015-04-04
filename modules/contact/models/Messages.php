@@ -1,20 +1,21 @@
 <?php
 
-namespace mii\modules\outlet\models;
+namespace mii\modules\contact\models;
 
-use mii\modules\outlet\models\base\BaseProjects;
+use mii\modules\contact\models\base\BaseMessages;
 use Yii;
 
 /**
- * This is the model class for table "outlet_projects".
+ * This is the model class for table "contact_messages".
  *
  * @property integer $id
  * @property string $name
- * @property string $description
- * @property string $image
- * @property integer $order_id
+ * @property string $email
+ * @property string $phone
+ * @property string $message
+ * @property string $created_at
  */
-class Projects extends BaseProjects
+class Messages extends BaseMessages
 {
     /**
      * @inheritdoc
