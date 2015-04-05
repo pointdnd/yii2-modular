@@ -39,7 +39,7 @@ $this->title = 'Creación de páginas web innovadoras - '.y()->id;
                         </div>
 
                         <?php if(isset($row['image_responsive'])):?>
-                        <div class="img-browser">
+                        <div class="img-browser" style="max-width: 450px;margin: auto 20px">
                             <div class="img-browser-header">
                                 <i class="fa fa-arrow-left"></i>
                                 <i class="fa fa-arrow-right"></i>
