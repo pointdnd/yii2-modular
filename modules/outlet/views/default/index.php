@@ -37,6 +37,17 @@ $this->title = 'Creación de páginas web innovadoras - '.y()->id;
                             <img style="width:100%" src="<?=y('.view')->theme->baseUrl?>/<?=$row['image']?>" alt="<?=$row['image_alt']?>">
                             <?php endif;?>
                         </div>
+
+                        <?php if(isset($row['image_responsive'])):?>
+                        <div class="img-browser">
+                            <div class="img-browser-header">
+                                <i class="fa fa-arrow-left"></i>
+                                <i class="fa fa-arrow-right"></i>
+                                <i class="fa fa-repeat"></i>
+                            </div>
+                            <img style="width:100%" src="<?=y('.view')->theme->baseUrl?>/<?=$row['image_responsive']?>" alt="<?=$row['image_alt']?> responsive">
+                        </div>
+                        <?php endif;?>
                     </div>
                 </div>
             </div>
