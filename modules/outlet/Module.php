@@ -9,6 +9,16 @@ class Module extends \yii\base\Module implements BootstrapInterface
 {
     public $controllerNamespace = 'mii\modules\outlet\controllers';
 
+    public $proyectsLists = [];
+    
+    public $questionLists = [];
+
+    public $homeTitle = '';
+    
+    public $homeSubTitle = '';
+
+    public $homeButton = '';
+
     public function init()
     {
         parent::init();
