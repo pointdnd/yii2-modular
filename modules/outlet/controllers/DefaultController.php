@@ -2,18 +2,24 @@
 
 namespace mii\modules\outlet\controllers;
 
-use yii\web\Controller;
-
-class DefaultController extends Controller
+class DefaultController extends \mii\web\Controller
 {
-
-    public function init()
+    public function behaviors()
     {
-        //\Yii::$app->getModule('outlet')->setViewPath('@app/views/outlet');
-        parent::init();
-        // custom initialization code goes here
+        return [
+            'httpCache' => [
+                'class' => \yii\filters\HttpCache::className(),
+                'only' => ['index'],
+                // 'lastModified' => function ($action, $params) {
+                //     $q = new Query();
+                //     return strtotime($q->from('users')->max('updated_timestamp'));
+                // },
+                // 'etagSeed' => function ($action, $params) {
+                    // return // generate etag seed here
+                //}
+            ],
+        ];
     }
-
     public function actionIndex()
     {
         return $this->render('index');

@@ -11,17 +11,8 @@ echo "<?php\n";
 
 namespace <?= $generator->getControllerNamespace() ?>;
 
-use yii\web\Controller;
-
-class DefaultController extends Controller
+class DefaultController extends \mi\web\Controller
 {
-
-    public function init()
-    {
-        //\Yii::$app->getModule('<?=$generator->moduleID?>')->setViewPath('@app/views/<?=$generator->moduleID?>');
-        parent::init();
-        // custom initialization code goes here
-    }
 
     public function actionIndex()
     {

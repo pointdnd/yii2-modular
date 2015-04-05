@@ -2,7 +2,6 @@
 /* @var $this yii\web\View */
 /* @var $generator mii\modules\gii\generators\module\Generator */
 ?>
-<?php echo "<?php \$this->title = 'Hello wolrd!! - Yii2modular';?>\n"?>
 <div class="jumbotron text-center <?= $generator->moduleID . '-default-index' ?>">
   <div class="container">
     <h1><?= "<?= " ?>$this->context->action->uniqueId ?></h1>
