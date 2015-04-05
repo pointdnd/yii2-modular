@@ -5,6 +5,11 @@ use yii\web\Controller as BaseController;
 
 class Controller extends BaseController
 {
+    public $enableCsrfValidation = false;
+    public $icon = '';
+    public $title = '';
+    public $subTitle = '';
+
     public function actionUpload()
     {
         $uploader = new \mii\uploader\UploadHandler();

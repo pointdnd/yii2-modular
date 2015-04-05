@@ -5,7 +5,7 @@ namespace mii\modules\contact\controllers;
 use Yii;
 use mii\modules\contact\models\Messages;
 use mii\modules\contact\models\MessagesSearch;
-use mii\web\Controller;
+
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
@@ -13,7 +13,7 @@ use yii\filters\AccessControl;
 /**
  * MessagesController implements the CRUD actions for Messages model.
  */
-class MessagesController extends Controller
+class MessagesController extends \mii\web\AdminController
 {
     public $enableCsrfValidation = false;
     public $icon = '';

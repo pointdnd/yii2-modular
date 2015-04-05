@@ -37,7 +37,6 @@ use <?= ltrim($generator->searchModelClass, '\\') . (isset($searchModelAlias) ? 
 <?php else: ?>
 use yii\data\ActiveDataProvider;
 <?php endif; ?>
-use <?= ltrim($generator->baseControllerClass, '\\') ?>;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
@@ -45,46 +44,16 @@ use yii\filters\AccessControl;
 /**
  * <?= $controllerClass ?> implements the CRUD actions for <?= $modelClass ?> model.
  */
-class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->baseControllerClass) . "\n" ?>
+class <?= $controllerClass ?> extends <?= '\mii\web\AdminController' . "\n" ?>
 {
-    public $enableCsrfValidation = false;
-    public $icon = '';
-    public $title = '';
-    public $subTitle = '';
-
     public function init()
     {
-        $this->layout='/admin';
         $this->icon = 'fa-folder-open';
         $this->title = <?= $generator->generateString(Inflector::pluralize(Inflector::camel2words(StringHelper::basename($generator->modelClass)))) ?>;
         $this->subTitle = <?= $generator->generateString(Inflector::pluralize(Inflector::camel2words(StringHelper::basename($generator->modelClass)))) ?>;
 
         parent::init();
         // custom initialization code goes here
-    }
-
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                ],
-            ],
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['create', 'update', 'index', 'delete', 'view','createAjax', 'updateAjax', 'indexAjax', 'deleteAjax', 'viewAjax'],
-                'rules' => [
-                    // allow authenticated users
-                    [
-                        'allow' => true,
-                        'roles' => ['root','admin'],
-                    ],
-                    // everything else is denied by default
-                ],
-            ],
-        ];
     }
 
     /**
