@@ -38,8 +38,8 @@ $this->title = 'Creación de páginas web innovadoras - '.y()->id;
                             <?php endif;?>
                         </div>
 
-                        <h4 class="info-header" style="margin-top:40px">Versión responsive design</h4>
                         <?php if(isset($row['image_responsive'])):?>
+                        <h4 class="info-header" style="margin-top:40px">Versión responsive design</h4>
                         <div class="img-browser" style="max-width: 450px;margin: 40px auto">
                             <div class="img-browser-header">
                                 <i class="fa fa-arrow-left"></i>
