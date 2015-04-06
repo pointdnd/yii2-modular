@@ -40,7 +40,16 @@ $this->title = 'Creación de páginas web innovadoras - '.y()->id;
 
                         <?php if(isset($row['image_responsive'])):?>
                         <h4 class="info-header" style="margin-top:40px">Versión responsive design</h4>
-                        <div class="img-browser" style="max-width: 450px;margin: 40px auto">
+                        <div class="img-browser" style="
+  max-width: 450px;
+  margin: 40px auto;
+  border-top: 37px solid #696E74;
+  border-bottom: 59px solid #696E74;
+  border-left: 9px solid #696E74;
+  border-right: 9px solid #696E74;
+  border-radius: 22px;
+  background-color: #696E74;
+                        ">
                             <div class="img-browser-header">
                                 <i class="fa fa-arrow-left"></i>
                                 <i class="fa fa-arrow-right"></i>
