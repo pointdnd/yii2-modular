@@ -23,7 +23,7 @@ class Messages extends BaseMessages
     public function rules()
     {
         return [
-            [['name', 'email', 'phone', 'message'], 'required','message'=>'Por favor envianos un {attribute}'],
+            [['name', 'email', 'phone', 'message'], 'required','message'=>'Por favor envíanos un {attribute}'],
             [['message'], 'string'],
             [['created_at', 'sent', 'read'], 'integer'],
             [['email'], 'trim'],
