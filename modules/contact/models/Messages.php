@@ -23,7 +23,14 @@ class Messages extends BaseMessages
     public function rules()
     {
         return array_merge(parent::rules(),[
-            // Here your custon rules that wont be overwrite by generator
+            [['name', 'email', 'phone', 'message'], 'required','message'=>'Por favor envianos un {attribute}'],
+            [['message'], 'string'],
+            [['created_at', 'sent', 'read'], 'integer'],
+            [['email'], 'trim'],
+            [['email'], 'email'],
+            [['sent', 'read'], 'boolean'],
+            [['name', 'email'], 'string', 'max' => 255],
+            [['phone'], 'string', 'max' => 100]
         ]);
     }
 
