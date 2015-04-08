@@ -32,9 +32,9 @@ $this->title = 'Creación de páginas web innovadoras - '.y()->id;
                                 <i class="fa fa-repeat"></i>
                             </div>
                             <?php if(y('.mobileDetect')->isMobile() || y('.mobileDetect')->isTablet() || y('.mobileDetect')->isIphone()):?>
-                            <img style="width:100%" src="<?=y('.view')->theme->baseUrl?>/<?=$row['image_mobile']?>" alt="<?=$row['image_alt']?>">
+                            <img style="width:100%"  src="<?=y('.view')->theme->baseUrl?>/img/blank.gif" data-echo="<?=y('.view')->theme->baseUrl?>/<?=$row['image_mobile']?>" alt="<?=$row['image_alt']?>">
                             <?php else:?>
-                            <img style="width:100%" src="<?=y('.view')->theme->baseUrl?>/<?=$row['image']?>" alt="<?=$row['image_alt']?>">
+                            <img style="width:100%" src="<?=y('.view')->theme->baseUrl?>/img/blank.gif" data-echo="<?=y('.view')->theme->baseUrl?>/<?=$row['image']?>" alt="<?=$row['image_alt']?>">
                             <?php endif;?>
                         </div>
 
