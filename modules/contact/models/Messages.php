@@ -22,7 +22,7 @@ class Messages extends BaseMessages
      */
     public function rules()
     {
-        return array_merge(parent::rules(),[
+        return [
             [['name', 'email', 'phone', 'message'], 'required','message'=>'Por favor envianos un {attribute}'],
             [['message'], 'string'],
             [['created_at', 'sent', 'read'], 'integer'],
@@ -31,7 +31,7 @@ class Messages extends BaseMessages
             [['sent', 'read'], 'boolean'],
             [['name', 'email'], 'string', 'max' => 255],
             [['phone'], 'string', 'max' => 100]
-        ]);
+        ];
     }
 
     /**
