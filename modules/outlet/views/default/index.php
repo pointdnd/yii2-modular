@@ -39,7 +39,7 @@ $this->title = 'Creación de páginas web innovadoras - '.y()->id;
                         </div>
 
                         <?php if(isset($row['image_responsive'])):?>
-                        <h4 class="info-header" style="margin-top:40px">Versión móvil <small><em>Responsive Design</em></small></h4>
+                        <h4 class="info-header" style="margin-top:40px">Versión móvil <br><small><em>Responsive Design</em></small></h4>
                         <div class="img-browser" style="
   max-width: 450px;
   margin: 40px auto;
