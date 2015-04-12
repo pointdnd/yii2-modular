@@ -36,13 +36,13 @@ class AdminController extends \mii\web\Controller
     {
         return [
             'verbs' => [
-                'class' => VerbFilter::className(),
+                'class' => \yii\filters\VerbFilter::className(),
                 'actions' => [
                     'delete' => ['post'],
                 ],
             ],
             'access' => [
-                'class' => AccessControl::className(),
+                'class' => \yii\filters\AccessControl::className(),
                 'only' => ['create', 'update', 'index', 'delete', 'view','createAjax', 'updateAjax', 'indexAjax', 'deleteAjax', 'viewAjax'],
                 'rules' => [
                     // allow authenticated users

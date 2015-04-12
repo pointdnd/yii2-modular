@@ -1,25 +1,49 @@
 <?php
 
 use yii\helpers\Html;
+use yii\widgets\DetailView;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel mii\modules\contact\models\MessagesSearch */
-/* @var $dataProvider yii\data\ActiveDataProvider */
+/* @var $model mii\modules\products\models\Packages */
 
 $this->title = $this->context->title;
 $this->params['title'] = Html::encode($this->title);
 $this->params['icon'] = $this->context->icon;
 $this->params['subtitle'] = Html::encode($this->context->subTitle);
+$this->params['breadcrumbs'][] = ['label' => 'Packages', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="messages-index">
+<div class="packages-view">
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?= Html::a('<i class="fa fa-plus"></i> ' . 'Create Messages', ['create'], ['class' => 'btn btn-primary pull-right']) ?>
+    <p class="text-right">
+        <?= Html::a('<i class="fa fa-pencil"></i> ' . 'Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('<i class="fa fa-trash-o"></i> ' . 'Delete', ['delete', 'id' => $model->id], [
+            'class' => 'btn btn-danger',
+            'data' => [
+                'confirm' => 'Are you sure you want to delete this item?',
+                'method' => 'post',
+            ],
+        ]) ?>
+        <?= Html::a('<i class="fa fa-chevron-left"></i> ' . 'Back', ['index'], ['class' => 'btn btn-default']) ?>
     </p>
+
+    <?= DetailView::widget([
+        'model' => $model,
+        'attributes' => [
+            'id',
+            'name',
+            'owner',
+            'email:email',
+            'phone',
+            'money',
+            'info:ntext',
+            'files',
+        ],
+    ]) ?>
+
+</div>
+
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -29,13 +53,15 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'name',
-            'email:email',
-            'phone',
-            'message:ntext',
-            // 'created_at',
-            'sent',
-            'read',
+            [
+                'format'=>'raw',
+                'value'=>function($model){ return "<img src='".$model->image_path."' class=\"img-thumbnail\" style=\"width:100px\" alt=\"\">"; },
+            ],
+            'title',
+            // 'description:ntext',
+            'price',
+            // 'products_packages_id',
+            // 'orden_id',
 
             [
                 'class' => 'yii\grid\ActionColumn',
@@ -67,5 +93,3 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ],
     ]); ?>
-
-</div>

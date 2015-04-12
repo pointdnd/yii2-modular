@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model mii\modules\contact\models\MessagesSearch */
+/* @var $model mii\modules\products\models\PackagesSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="messages-search">
+<div class="packages-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -19,17 +19,17 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name') ?>
 
+    <?= $form->field($model, 'owner') ?>
+
     <?= $form->field($model, 'email') ?>
 
     <?= $form->field($model, 'phone') ?>
 
-    <?= $form->field($model, 'message') ?>
+    <?php // echo $form->field($model, 'money') ?>
 
-    <?php // echo $form->field($model, 'created_at') ?>
+    <?php // echo $form->field($model, 'info') ?>
 
-    <?php // echo $form->field($model, 'sent') ?>
-
-    <?php // echo $form->field($model, 'read') ?>
+    <?php // echo $form->field($model, 'files') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

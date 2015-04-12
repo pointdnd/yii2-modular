@@ -1,6 +1,6 @@
 <?php
 
-namespace mii\modules\contact\models\base;
+namespace mii\modules\products\models\base;
 
 use Yii;
 
@@ -8,61 +8,65 @@ use Yii;
  * Examples how to use for retrive data
  * 
  * Update one record  
- * $model=Messages::findOne($id);
+ * $model=Packages::findOne($id);
  * // Or create a new record
- * // $model=new Messages;
+ * // $model=new Packages;
  * $model->name='value';
+ * $model->owner='value';
  * $model->email='value';
  * $model->phone='value';
- * $model->message='value';
- * $model->created_at=date('Y-m-d H:i:s');
- * $model->sent='value';
- * $model->read='value';
+ * $model->money='value';
+ * $model->info='value';
+ * $model->files='value';
  * $model->save();
  *
  *
  * Retrive Severals records
- * $contact_messages=Messages::find()->orderBy('order_id')->all();
- * <?php foreach($contact_messages as $data): ?>
+ * $products_packages=Packages::find()->orderBy('order_id')->all();
+ * <?php foreach($products_packages as $data): ?>
  * <?=$data->id;?>
  * <?=$data->name;?>
+ * <?=$data->owner;?>
  * <?=$data->email;?>
  * <?=$data->phone;?>
- * <?= \Yii::$app->formatter->toBr($data->message);?>
- * <?=$data->created_at;?>
- * <?=$data->sent;?>
- * <?=$data->read;?>
+ * <?=$data->money;?>
+ * <?=$data->info;?>
+ * <?=$data->filesPath;?>
+ * <?= \yii\helpers\Html::link('<i class="fa fa-download"></i>',$data->filesPath,array('font-size:100%'));?>
  * <?php endforeach; ?>
  * 
  *
  * Retrive first record
- * $contact_messages=Messages::model()->find()->one();
- * <?=$contact_messages->id;?>
- * <?=$contact_messages->name;?>
- * <?=$contact_messages->email;?>
- * <?=$contact_messages->phone;?>
- * <?= \Yii::$app->formatter->toBr($contact_messages->message);?>
- * <?=$contact_messages->created_at;?>
- * <?=$contact_messages->sent;?>
- * <?=$contact_messages->read;?>
+ * $products_packages=Packages::model()->find()->one();
+ * <?=$products_packages->id;?>
+ * <?=$products_packages->name;?>
+ * <?=$products_packages->owner;?>
+ * <?=$products_packages->email;?>
+ * <?=$products_packages->phone;?>
+ * <?=$products_packages->money;?>
+ * <?=$products_packages->info;?>
+ * <?=$products_packages->filesPath;?>
+ * <?= \yii\helpers\Html::link('<i class="fa fa-download"></i>',$products_packages->filesPath,array('font-size:100%'));?>
  * 
- * This is the model class for table "contact_messages".
+ * This is the model class for table "products_packages".
  *
  * @property integer $id
  * @property string $name
+ * @property string $owner
  * @property string $email
  * @property string $phone
- * @property string $message
- * @property integer $created_at
- * @property integer $sent
- * @property integer $read
+ * @property integer $money
+ * @property string $info
+ * @property string $files
  */
-class BaseMessages extends \yii\db\ActiveRecord
+class BasePackages extends \yii\db\ActiveRecord
 {
+	public $files_path;
 
     public function afterFind()
     {
         parent::afterFind();
+		$this->files_path = \Yii::getAlias('@web/uploads').'/'.$this->files;
     }
 
     /**
@@ -70,7 +74,7 @@ class BaseMessages extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'contact_messages';
+        return 'products_packages';
     }
 
     /**
@@ -79,14 +83,14 @@ class BaseMessages extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'email', 'phone', 'message'], 'required'],
-            [['message'], 'string'],
-            [['created_at', 'sent', 'read'], 'integer'],
+            [['name', 'owner', 'email', 'phone'], 'required'],
+            [['money'], 'integer'],
+            [['info'], 'string'],
             [['email'], 'trim'],
             [['email'], 'email'],
-            [['sent', 'read'], 'boolean'],
-            [['name', 'email'], 'string', 'max' => 255],
-            [['phone'], 'string', 'max' => 100]
+            [['name'], 'string', 'max' => 150],
+            [['owner', 'email'], 'string', 'max' => 255],
+            [['phone', 'files'], 'string', 'max' => 100]
         ];
     }
 
@@ -98,11 +102,12 @@ class BaseMessages extends \yii\db\ActiveRecord
             // field name is the same as the attribute name
 			'id',
 			'name',
+			'owner',
 			'email',
 			'phone',
-			'message',
-			'sent',
-			'read',
+			'money',
+			'info',
+			'files',
             // field name is "email", the corresponding attribute name is "email_address"
             // 'email' => 'email_address',
             // field name is "name", its value is defined by a PHP callback
@@ -115,7 +120,6 @@ class BaseMessages extends \yii\db\ActiveRecord
     public function extraFields()
     {
         return [
-			'created_at',
         ];
     }
 
@@ -127,21 +131,13 @@ class BaseMessages extends \yii\db\ActiveRecord
         return [
             'id' => y('app', 'ID'),
             'name' => y('app', 'Name'),
+            'owner' => y('app', 'Owner'),
             'email' => y('app', 'Email'),
             'phone' => y('app', 'Phone'),
-            'message' => y('app', 'Message'),
-            'created_at' => y('app', 'Created At'),
-            'sent' => y('app', 'Sent'),
-            'read' => y('app', 'Read'),
+            'money' => y('app', 'Money'),
+            'info' => y('app', 'Info'),
+            'files' => y('app', 'Files'),
         ];
     }
 
-    /** @inheritdoc */
-    public function beforeSave($insert)
-    {
-        if ($insert) {
-            $this->setAttribute('created_at', time());
-        }
-        return parent::beforeSave($insert);
-    }
 }

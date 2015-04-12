@@ -1,26 +1,22 @@
 <?php
 
-namespace mii\modules\users\models;
+namespace mii\modules\products\models;
 
-use mii\modules\users\models\base\BaseAuthItems;
+use mii\modules\products\models\base\BaseLists;
 use Yii;
 
 /**
- * This is the model class for table "users_auth_item".
+ * This is the model class for table "products_list".
  *
- * @property string $name
- * @property integer $type
+ * @property integer $id
+ * @property string $title
+ * @property string $image
  * @property string $description
- * @property string $rule_name
- * @property string $data
- * @property integer $created_at
- * @property integer $updated_at
- *
- * @property UsersAuthAssignment[] $usersAuthAssignments
- * @property UsersAuthRule $ruleName
- * @property UsersAuthItemChild[] $usersAuthItemChildren
+ * @property integer $price
+ * @property integer $products_packages_id
+ * @property integer $orden_id
  */
-class AuthItems extends BaseAuthItems
+class Lists extends BaseLists
 {
     /**
      * @inheritdoc

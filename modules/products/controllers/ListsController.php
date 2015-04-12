@@ -1,67 +1,36 @@
 <?php
 
-namespace mii\modules\contact\controllers;
+namespace mii\modules\products\controllers;
 
 use Yii;
-use mii\modules\contact\models\Messages;
-use mii\modules\contact\models\MessagesSearch;
-
+use mii\modules\products\models\Lists;
+use mii\modules\products\models\ListsSearch;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
 /**
- * MessagesController implements the CRUD actions for Messages model.
+ * ListsController implements the CRUD actions for Lists model.
  */
-class MessagesController extends \mii\web\AdminController
+class ListsController extends \mii\web\AdminController
 {
-    public $enableCsrfValidation = false;
-    public $icon = '';
-    public $title = '';
-    public $subTitle = '';
-
     public function init()
     {
-        $this->layout='/admin';
         $this->icon = 'fa-folder-open';
-        $this->title = 'Messages';
-        $this->subTitle = 'Messages';
+        $this->title = 'Lists';
+        $this->subTitle = 'Lists';
 
         parent::init();
         // custom initialization code goes here
     }
 
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                ],
-            ],
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['create', 'update', 'index', 'delete', 'view','createAjax', 'updateAjax', 'indexAjax', 'deleteAjax', 'viewAjax'],
-                'rules' => [
-                    // allow authenticated users
-                    [
-                        'allow' => true,
-                        'roles' => ['root','admin'],
-                    ],
-                    // everything else is denied by default
-                ],
-            ],
-        ];
-    }
-
     /**
-     * Lists all Messages models.
+     * Lists all Lists models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new MessagesSearch();
+        $searchModel = new ListsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -71,27 +40,27 @@ class MessagesController extends \mii\web\AdminController
     }
 
     /**
-     * Displays a single Messages model.
+     * Displays a single Lists model.
      * @param integer $id
      * @return mixed
      */
     public function actionView($id)
     {
         $model = $this->findModel($id);
-        $this->title = $model->name;
+        $this->title = $model->title;
         return $this->render('view', [
             'model' => $model,
         ]);
     }
 
     /**
-     * Creates a new Messages model.
+     * Creates a new Lists model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Messages();
+        $model = new Lists();
         
         if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
             Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
@@ -108,11 +77,11 @@ class MessagesController extends \mii\web\AdminController
     }
 
     /**
-     * Creates a new Messages model.
+     * Creates a new Lists model.
      * If creation is successful, the response will be a 'success'=true.
      * @return mixed
      *   
-     *  $(document).on('submit','#messages-form',function(e) {
+     *  $(document).on('submit','#lists-form',function(e) {
      *    e.preventDefault();
      *    var $form = $(this);
      *    $.ajax({
@@ -151,7 +120,7 @@ class MessagesController extends \mii\web\AdminController
     public function actionCreateAjax()
     {
         y('.response')->format = 'json';
-        $model = new Messages();
+        $model = new Lists();
         $model->attributes=$_REQUEST;
         if ($model->save()) { 
             return [
@@ -168,7 +137,7 @@ class MessagesController extends \mii\web\AdminController
     }
 
     /**
-     * Updates an existing Messages model.
+     * Updates an existing Lists model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -192,7 +161,7 @@ class MessagesController extends \mii\web\AdminController
     }
 
     /**
-     * Deletes an existing Messages model.
+     * Deletes an existing Lists model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -205,15 +174,15 @@ class MessagesController extends \mii\web\AdminController
     }
 
     /**
-     * Finds the Messages model based on its primary key value.
+     * Finds the Lists model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Messages the loaded model
+     * @return Lists the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Messages::findOne($id)) !== null) {
+        if (($model = Lists::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

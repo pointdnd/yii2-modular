@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model mii\modules\contact\models\Messages */
+/* @var $model mii\modules\products\models\Packages */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="messages-form">
+<div class="packages-form">
     
     <?php $form = ActiveForm::begin([
         'enableAjaxValidation' => true,
@@ -23,6 +23,13 @@ use yii\widgets\ActiveForm;
     <div class="row">
     <div class="col-lg-6">
     <?= $form->field($model, 'name')->widget(y('TextField')->class,[
+                    'allowed' => 150,
+                    'options' => array('class'=>'form-control'),
+                ]) ?>
+
+    </div>
+    <div class="col-lg-6">
+    <?= $form->field($model, 'owner')->widget(y('TextField')->class,[
                     'allowed' => 255,
                     'options' => array('class'=>'form-control'),
                 ]) ?>
@@ -43,15 +50,22 @@ use yii\widgets\ActiveForm;
 
     </div>
     <div class="col-lg-6">
-    <?= $form->field($model, 'message')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'money')->widget(y('TextField')->class,[
+                    'allowed' => 11,
+                    'options' => array('class'=>'form-control'),
+                ]) ?>
 
     </div>
     <div class="col-lg-6">
-    <?= $form->field($model, 'sent')->checkbox() ?>
+    <?= $form->field($model, 'info')->textarea(array('rows'=>10,'cols'=>5)); ?>
 
     </div>
     <div class="col-lg-6">
-    <?= $form->field($model, 'read')->checkbox() ?>
+    <?= $form->field($model, 'files')->widget(y('Upload')->class,[
+                'allowedExtensions' => array('png','jpg','jpeg','csv','xls','xlsx','doc','docx','pdf','rar','zip','txt','mp4','mp3','mov','swf'),
+                'iconButtom' => 'fa-cloud-upload',
+                'actionUrl' => y('.urlManager')->createUrl($this->context->module->id.'/'.$this->context->id.'/upload'),
+            ]) ?>
 
     </div>
     </div>

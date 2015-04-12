@@ -4,16 +4,16 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model mii\modules\contact\models\Messages */
+/* @var $model mii\modules\products\models\Lists */
 
 $this->title = $this->context->title;
 $this->params['title'] = Html::encode($this->title);
 $this->params['icon'] = $this->context->icon;
 $this->params['subtitle'] = Html::encode($this->context->subTitle);
-$this->params['breadcrumbs'][] = ['label' => 'Messages', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Lists', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="messages-view">
+<div class="lists-view">
 
     <p class="text-right">
         <?= Html::a('<i class="fa fa-pencil"></i> ' . 'Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
@@ -31,13 +31,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'name',
-            'email:email',
-            'phone',
-            'message:ntext',
-            'created_at',
-            'sent',
-            'read',
+            'title',
+            'image',
+            'description:ntext',
+            'price',
+            'products_packages_id',
+            'orden_id',
         ],
     ]) ?>
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace mii\modules\contact;
+namespace mii\modules\products;
 use yii\base\BootstrapInterface;
 use yii\web\GroupUrlRule;
 use yii\console\Application as ConsoleApplication;
 
 class Module extends \yii\base\Module implements BootstrapInterface
 {
-    public $controllerNamespace = 'mii\modules\contact\controllers';
+    public $controllerNamespace = 'mii\modules\products\controllers';
 
     public function init()
     {
@@ -20,10 +20,10 @@ class Module extends \yii\base\Module implements BootstrapInterface
     public function bootstrap($app)
     {
         /** @var $module Module */
-        if ($app->hasModule('contact') && ($module = $app->getModule('contact')) instanceof Module) {
+        if ($app->hasModule('products') && ($module = $app->getModule('products')) instanceof Module) {
             
             if ($app instanceof ConsoleApplication) {
-                $module->controllerNamespace = 'app\modules\contact\commands';
+                $module->controllerNamespace = 'app\modules\products\commands';
 
             } else {
 				// config urls example
@@ -36,7 +36,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
 
                 /**
 				 * $configUrlRule = [
-				 *    'prefix' => 'contact',
+				 *    'prefix' => 'products',
 				 *    'rules'  => [
 				 *       // Put here your module group rules
 				 *    ]
@@ -51,8 +51,9 @@ class Module extends \yii\base\Module implements BootstrapInterface
     public function getMenuAdmin()
     {
         return array(
-            array('label'=>\Yii::t('app','Contact'), 'icon'=>'fa fa-folder-open', 'url'=>array('#'), 'items'=>array(
-                array('label'=>\Yii::t('app','List of contact'), 'url'=>array('/'.$this->id.'/messages/index')),
+            array('label'=>\Yii::t('app','Products'), 'icon'=>'fa fa-folder-open', 'url'=>array('#'), 'items'=>array(
+                array('label'=>\Yii::t('app','Packages'), 'url'=>array('/'.$this->id.'/packages/index')),
+                array('label'=>\Yii::t('app','Items'), 'url'=>array('/'.$this->id.'/lists/index')),
             )),
         );
     }

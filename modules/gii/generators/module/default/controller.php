@@ -11,7 +11,7 @@ echo "<?php\n";
 
 namespace <?= $generator->getControllerNamespace() ?>;
 
-class DefaultController extends \mi\web\Controller
+class DefaultController extends \mii\web\Controller
 {
 
     public function actionIndex()

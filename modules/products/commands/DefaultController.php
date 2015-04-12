@@ -1,6 +1,6 @@
 <?php
 
-namespace mii\modules\contact\commands;
+namespace mii\modules\products\commands;
 use yii\console\Controller;
 use yii\helpers\Console;
 
@@ -14,7 +14,7 @@ class DefaultController extends Controller
     public function actionIndex($name = null)
     {
         if ($name !== null) {
-            $this->stdout(\Yii::t('app', 'Hello ') . $name . " from contact module\n", Console::FG_RED);
+            $this->stdout(\Yii::t('app', 'Hello ') . $name . " from products module\n", Console::FG_RED);
         } else {
             $this->stdout(\Yii::t('app', 'Error occurred with bame params') . "\n", Console::FG_RED);
         }

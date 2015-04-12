@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel mii\modules\contact\models\MessagesSearch */
+/* @var $searchModel mii\modules\products\models\ListsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = $this->context->title;
@@ -13,12 +13,12 @@ $this->params['icon'] = $this->context->icon;
 $this->params['subtitle'] = Html::encode($this->context->subTitle);
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="messages-index">
+<div class="lists-index">
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('<i class="fa fa-plus"></i> ' . 'Create Messages', ['create'], ['class' => 'btn btn-primary pull-right']) ?>
+        <?= Html::a('<i class="fa fa-plus"></i> ' . 'Create Lists', ['create'], ['class' => 'btn btn-primary pull-right']) ?>
     </p>
 
     <?= GridView::widget([
@@ -29,13 +29,15 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'name',
-            'email:email',
-            'phone',
-            'message:ntext',
-            // 'created_at',
-            'sent',
-            'read',
+            [
+                'format'=>'raw',
+                'value'=>function($model){ return "<img src='".$model->image_path."' class=\"img-thumbnail\" style=\"width:100px\" alt=\"\">"; },
+            ],
+            'title',
+            // 'description:ntext',
+            'price',
+            // 'products_packages_id',
+            // 'orden_id',
 
             [
                 'class' => 'yii\grid\ActionColumn',

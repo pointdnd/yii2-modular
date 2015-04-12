@@ -1,16 +1,16 @@
 <?php
 
-namespace mii\modules\contact\models;
+namespace mii\modules\products\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use mii\modules\contact\models\Messages;
+use mii\modules\products\models\Packages;
 
 /**
- * MessagesSearch represents the model behind the search form about `mii\modules\contact\models\Messages`.
+ * PackagesSearch represents the model behind the search form about `mii\modules\products\models\Packages`.
  */
-class MessagesSearch extends Messages
+class PackagesSearch extends Packages
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class MessagesSearch extends Messages
     public function rules()
     {
         return [
-            [['id', 'created_at', 'sent', 'read'], 'integer'],
-            [['name', 'email', 'phone', 'message'], 'safe'],
+            [['id', 'money'], 'integer'],
+            [['name', 'owner', 'email', 'phone', 'info', 'files'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class MessagesSearch extends Messages
      */
     public function search($params)
     {
-        $query = Messages::find();
+        $query = Packages::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -53,15 +53,15 @@ class MessagesSearch extends Messages
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'created_at' => $this->created_at,
-            'sent' => $this->sent,
-            'read' => $this->read,
+            'money' => $this->money,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'owner', $this->owner])
             ->andFilterWhere(['like', 'email', $this->email])
             ->andFilterWhere(['like', 'phone', $this->phone])
-            ->andFilterWhere(['like', 'message', $this->message]);
+            ->andFilterWhere(['like', 'info', $this->info])
+            ->andFilterWhere(['like', 'files', $this->files]);
 
         return $dataProvider;
     }

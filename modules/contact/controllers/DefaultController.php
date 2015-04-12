@@ -28,7 +28,7 @@ class DefaultController extends Controller
             y('.mailer')->compose(['email' => $data->email])
             ->setHtmlBody($this->renderPartial('email',['model'=>$data]))
             ->setFrom('info@retalapp.com')
-            ->setTo('info@retalapp.com')
+            ->setTo('gustavo@retalapp.com')
             ->setSubject('Cotizador Retalapp')
             ->send();
             $data->sent=1;

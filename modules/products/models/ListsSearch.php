@@ -1,16 +1,16 @@
 <?php
 
-namespace mii\modules\contact\models;
+namespace mii\modules\products\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use mii\modules\contact\models\Messages;
+use mii\modules\products\models\Lists;
 
 /**
- * MessagesSearch represents the model behind the search form about `mii\modules\contact\models\Messages`.
+ * ListsSearch represents the model behind the search form about `mii\modules\products\models\Lists`.
  */
-class MessagesSearch extends Messages
+class ListsSearch extends Lists
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class MessagesSearch extends Messages
     public function rules()
     {
         return [
-            [['id', 'created_at', 'sent', 'read'], 'integer'],
-            [['name', 'email', 'phone', 'message'], 'safe'],
+            [['id', 'price', 'products_packages_id', 'orden_id'], 'integer'],
+            [['title', 'image', 'description'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class MessagesSearch extends Messages
      */
     public function search($params)
     {
-        $query = Messages::find();
+        $query = Lists::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -53,15 +53,14 @@ class MessagesSearch extends Messages
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'created_at' => $this->created_at,
-            'sent' => $this->sent,
-            'read' => $this->read,
+            'price' => $this->price,
+            'products_packages_id' => $this->products_packages_id,
+            'orden_id' => $this->orden_id,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'email', $this->email])
-            ->andFilterWhere(['like', 'phone', $this->phone])
-            ->andFilterWhere(['like', 'message', $this->message]);
+        $query->andFilterWhere(['like', 'title', $this->title])
+            ->andFilterWhere(['like', 'image', $this->image])
+            ->andFilterWhere(['like', 'description', $this->description]);
 
         return $dataProvider;
     }

@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel mii\modules\contact\models\MessagesSearch */
+/* @var $searchModel mii\modules\products\models\PackagesSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = $this->context->title;
@@ -13,12 +13,12 @@ $this->params['icon'] = $this->context->icon;
 $this->params['subtitle'] = Html::encode($this->context->subTitle);
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="messages-index">
+<div class="packages-index">
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('<i class="fa fa-plus"></i> ' . 'Create Messages', ['create'], ['class' => 'btn btn-primary pull-right']) ?>
+        <?= Html::a('<i class="fa fa-plus"></i> ' . 'Create Packages', ['create'], ['class' => 'btn btn-primary pull-right']) ?>
     </p>
 
     <?= GridView::widget([
@@ -30,12 +30,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'name',
+            'owner',
             'email:email',
             'phone',
-            'message:ntext',
-            // 'created_at',
-            'sent',
-            'read',
+            // 'money',
+            // 'info:ntext',
+            // 'files',
 
             [
                 'class' => 'yii\grid\ActionColumn',

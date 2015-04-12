@@ -1,5 +1,4 @@
-<?php $this->title = 'Hello wolrd!! - Yii2modular';?>
-<div class="jumbotron text-center contact-default-index">
+<div class="jumbotron text-center products-default-index">
   <div class="container">
     <h1><?= $this->context->action->uniqueId ?></h1>
     <p>
